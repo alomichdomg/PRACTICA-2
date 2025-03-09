@@ -10,7 +10,7 @@ abundancias_estrella_BD <- data.frame(
   numero_de_individuos = c(17, 15, 10, 4, 4, 3, 3, 2, 2, 1, 1, 1)
 )
 
-View(abundancias_estrella)
+View(abundancias_estrella_BD)
 
 library(ggplot2)
 
