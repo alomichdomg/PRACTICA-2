@@ -8,7 +8,8 @@ source("FUNCIONES.R") #para llamar las funciones
 
 #LA ULTIMA BOLSA:
 otro_abundancias <- c(14,10,3,3,2,2,1,1)
-otro_nombres <- c("azul cielo", "azul claro", "azul oscuro", "rosa mexicano", "rosa","rosa claro", 
+otro_nombres <- c("azul cielo", "azul claro", "azul oscuro", "rosa mexicano", 
+                  "rosa","rosa claro", 
                   "verde claro", "rojo")
 
 
