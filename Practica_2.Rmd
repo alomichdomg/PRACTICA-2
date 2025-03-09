@@ -1,0 +1,24 @@
+---
+title: "Análisis de diversidad de especies en sitios simulados"
+author: "Adriana Melissa Martínez Rojas, Alondra Michelle, Isabel"
+date: "2025-03-09"
+output: html_document
+---
+
+## *Introducción*
+
+## *Objetivos*
+
+-   Analizar la estructura de las comunidades con gráficos de abundancias ordenadas.
+
+-   Comparar la diversidad entre sitios utilizando medidas de diversidad beta.
+
+-   Medir la diversidad alfa con los índices Shannon, Pielou, Simpson, Simpson inverso, Gini, y Chao1.
+
+-   Encontrar la curva de rarefacción para cada sitio.
+
+-   Calcular la gráfica de abundancias-ordenadas (rank-abundance) para cada sitio.
+
+-   Calcular la diversidad beta de todos las parejas de sitios utilizando los índices de: Jaccard y Bray-Curtis.
+
+-   Construir una matriz de diferencias (distancias) para cada medida.

@@ -32,7 +32,7 @@ ggplot(abundancias_corazon_BD, aes(x = reorder(especie, -numero_de_individuos),
   )) +
   theme(axis.text.x = element_text(angle = 90))
 
-source("FUNCIONES.R") #para llamar las funciones
+source("FUNCIONES.R")
 
 abundancias_corazon <- c(6, 2, 1, 7, 8, 1, 6, 9)
 

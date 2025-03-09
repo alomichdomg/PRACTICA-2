@@ -37,7 +37,7 @@ ggplot(abundancias_estrella_BD, aes(x = reorder(especie, -numero_de_individuos),
   )) +
   theme(axis.text.x = element_text(angle = 90))
 
-source("FUNCIONES.R") #para llamar las funciones
+source("FUNCIONES.R") 
 
 abundancias_estrella <- c(17, 15, 10, 4, 4, 3, 3, 2, 2, 1, 1, 1)
 
