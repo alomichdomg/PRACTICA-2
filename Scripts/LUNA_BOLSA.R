@@ -73,21 +73,4 @@ fig1 <- ggplot (luna_dataframe, aes(x= especie_color, y= abundancia))+
   geom_bar ( stat = "identity", fill = "#6666FF") 
 fig1
 
-#############################################################################
-#rarecurve: tiene que ser una matriz de los datos.
-
-View(tabla_abundancias)
-#attach(tabla_abundancias)
-numeric_data <- tabla_abundancias [,sapply(tabla_abundancias, is.numeric)]
-str(numeric_data)
-numeric_matrix <- as.matrix(numeric_data)
-numeric_matrix_no_na <- na.omit(numeric_matrix)
-library(iNEXT)
-#install.packages("iNEXT")
-D_abund <- iNEXT(numeric_matrix_no_na, datatype = "abundance")
-plot(D_abund)
-
-#detach(tabla_abundancias)
-
-#link:https://youtu.be/bUFdei_zl88?si=jYSCPryuyXKTos6q 
-
+##################################################################
