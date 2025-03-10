@@ -33,7 +33,7 @@ Esta práctica consistió en una simulación de diferentes sitios, los cuales fu
 
 ## **Resultados**
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(DescTools)
   #install.packages("DescTools")
 library(vegan)
