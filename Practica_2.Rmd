@@ -1,6 +1,6 @@
 ---
 title: "Análisis de diversidad de especies en sitios simulados"
-author: "Adriana Melissa Martínez Rojas, Alondra Michelle, Maria Isabel Herrera Oritz"
+author: "Adriana Melissa Martínez Rojas, Alondra Michelle Dominguez Garcia, Maria Isabel Herrera Oritz"
 date: "2025-03-09"
 output: html_document
 ---
@@ -846,6 +846,8 @@ Conocer los índices de diversidad permiten describir los componentes del sistem
 ### **Conclusión** 
 
 Los índices alfa y beta como Shannon, Simpson, Pielou, Gini, Chao, Jaccard y Bray-Curtis, permiten conocer la riqueza, abundancia, equitatividad, y estructura de las comunidades ecológicas. Permite identificar especies dominantes o si por el contrario existen comunidades con equitatividad, además de conocer la manera en la que el ambiente impacta en estos permitiendo estudiar y entender la importancia de las especies en conjunto a las condiciones ambientales para la existencia y dinámica de las especies. Por lo que da paso a conocer y estudiar las interacciones y problemas del ecosistema, para proceder con su conservación y lograr la prevención de perdida de ambientes.
+
+### **Evidencia fotográfica**
 
 ### **Contribuciones del Equipo**
 
