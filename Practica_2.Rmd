@@ -796,6 +796,13 @@ kable(indices, caption = "Comparacion de indices de diversidad por bolsa")
 
 ```
 
+En el sitio luna el resultado de los distintos índices nos indica que el sitio esta en equidad, un valor “alto” en el índice de Shannon, un valor que tiene a O en el índice de Simpson y su inverso que tiene a la Riqueza del sistema, el índice de chao1 es igual a la riqueza del sitio. El valor del índice de Gini nos indica que el sitio tiene una distribución más equitativa y no hay dominancia de una especie.  
+
+En el sitio naranja se observa una dominancia de la especie naranja, esto se puede observar en los valores obtenidos en los índices, en el caso del índice de Shannon, Pielou y Gini sus valores o la falta nos indica una dominancia completa de la especie naranja, el índice de chao1 nos da el valor de la riqueza que en este caso es de 1.  
+
+La bolsa ultima, a diferencia de la bolsa luna, no cuenta con todas las especies, los índices de Shannon indica que no hay dominancia de una especie y de Pielou indican que las especies están en abundancias y no hay una dominancia marcada. En el caso del índice de Gini, los valores obtenidos están en la mitad del rango, esto puede indicar que hay un balance entre dominancia y equidad de una especia, si vemos la grafica de abundancias observados que la especie azul tienen mayor numero de abundancia a comparación que otras especies, pero no representa una dominancia. 
+
+
 ## **Cuestionario**
 
 **1. ¿Cómo varían los valores de los índices entre los sitios? ¿Qué diferencias resaltan?**
