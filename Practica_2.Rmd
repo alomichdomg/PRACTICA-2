@@ -218,7 +218,7 @@ print (G_sonrisa)
 
 ### *Indices*
 
-**shanon**
+**Shanon**
 
 ```{r}
 shannon_mejor(sonrisa_abundancias)-> shannon_sonrisa
@@ -226,7 +226,7 @@ print(shannon_sonrisa)
 #3.39
 ```
 
-**pielou**
+**Pielou**
 
 ```{r}
 pielou(sonrisa_abundancias)-> pielou_sonrisa
@@ -234,7 +234,7 @@ print(pielou_sonrisa)
 #1.36
 ```
 
-**simpson**
+**Simpson**
 
 ```{r}
 simpson_funcion(sonrisa_abundancias)-> simpson_sonrisa
@@ -242,7 +242,7 @@ print(simpson_sonrisa)
 #0.10
 ```
 
-**simpson inverso**
+**Simpson inverso**
 
 ```{r}
 inverso_simpson(sonrisa_abundancias)-> inverso_sonrisa
@@ -250,7 +250,7 @@ print(inverso_sonrisa)
 #9.46
 ```
 
-**gini**
+**Gini**
 
 ```{r}
 Gini(sonrisa_abundancias)-> gini_sonrisa
@@ -258,11 +258,95 @@ print(gini_sonrisa)
 #0.30
 ```
 
-**chao**
+**Chao**
 
 ```{r}
 estimateR(sonrisa_abundancias)
 #12
+```
+
+### **Bolsa verde**
+
+```{r}
+verde_abundancias <- c(66)
+verde_c<- c("verde menta")
+
+names(verde_abundancias)<- verde_c
+print(verde_abundancias)
+
+###Gráfica de abundancias
+plot(verde_abundancias)
+
+#data frame
+verde_dataframe <- data.frame(
+  especie_color = verde_c,
+  abundancia = verde_abundancias
+)
+print (verde_dataframe)
+```
+
+**Gráfica con ggplot**
+
+```{r}
+G_verde <- ggplot (verde_dataframe, aes(x=especie_color, y= abundancia, fill = especie_color))+  
+  geom_bar(stat = "identity") +
+  labs(title = "Abundancia de especies en la bolsa verde",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "verde menta" = "mediumspringgreen"
+  ))
+print (G_verde)
+
+```
+
+### **Índices**
+
+**Shannon**
+
+```{r}
+shannon_mejor(verde_abundancias)-> shannon_verde
+print(shannon_verde)
+#0
+```
+
+**Pielou**
+
+```{r}
+pielou(verde_abundancias)-> pielou_verde
+print(pielou_verde)
+#0
+```
+
+**Simpson**
+
+```{r}
+simpson_funcion(verde_abundancias)-> simpson_verde
+print(simpson_verde)
+#1
+```
+
+**Simpson inverso**
+
+```{r}
+inverso_simpson(verde_abundancias)-> inverso_verde
+print(inverso_verde)
+#1
+```
+
+**Gini**
+
+```{r}
+Gini(verde_abundancias)-> gini_verde
+print(gini_verde)
+#0
+```
+
+**Chao**
+
+```{r}
+estimateR(verde_abundancias)
+#1
 ```
 
 ## **Discusión**
