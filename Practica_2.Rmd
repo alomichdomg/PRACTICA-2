@@ -692,6 +692,7 @@ El índice de Chao1, debiido a que se encaraga de estimar la riqueza de especies
 Porque se encarga de medir la distribución de las abundancias, la cual nos ayuda a determinar que tan uniforme es la distribución de especies en un sitio, si es uniforme se dice que es un sitio equitativo y si no, no lo es.
 
 **4. ¿Cuál sitio parece tener mayor diversidad según la curva de rarefacción? ¿Por qué?**
+En la curva de rarefaccion, se observa que la bolsa luna, estrella y sonrisa tienen patrones muy similares, lo cual coincide con nuestra base de datos. Sin embargo, si solo nos basamos en la gráfica podemos observar que en el caso de la bolsa estrella, hay una diferencia que se percibe  al momento de estabilizarse, lo que suguiere que hay más especies en ese sitio, por lo tanto, podríamos concluír que la bolsa estrella presenta una mayor diversidad.
 
 **5. ¿Cómo afecta el tamaño de la muestra en la forma de la curva?**  
 Afecta principalmente en el tiempo de estabilización o tamaño de la curva, mientras más pequeña es una muestra es altamente probable que la curva se estabilice rápidamente, ya que no será posible detectar la maypr cantidad de especies, por el contrario, si la muestra es más grande es probable seguir encontrando especies, por lo tanto, la curva demorará más tiempo en estabilizarse.
