@@ -46,8 +46,6 @@ abundancias_estrella_BD <- data.frame(
 
 abundancias_estrella <- c(17, 15, 10, 4, 4, 3, 3, 2, 2, 1, 1, 1)
 
-library(ggplot2)
-
 ggplot(abundancias_estrella_BD, aes(x = reorder(especie, -numero_de_individuos), 
                                  y = numero_de_individuos, 
                                  fill = especie)) +
