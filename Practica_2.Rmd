@@ -687,13 +687,16 @@ detach(todos_datos)
 
 **1. ¿Cómo varían los valores de los índices entre los sitios? ¿Qué diferencias resaltan?**
 
-**2. ¿Cuál índice es más sensible a especies raras?**
+**2. ¿Cuál índice es más sensible a especies raras?**  
+El índice de Chao1, debiido a que se encaraga de estimar la riqueza de especies tomando en cuenya las especies raras, de modo que prioriza los singletons y doubletons, siguiendo la lógica de que si hay esas especies raras es probable que haya especies aún más raras.
 
-**3. ¿Por qué el índice de Pielou nos da información sobre la equitatividad de la comunidad?**
+**3. ¿Por qué el índice de Pielou nos da información sobre la equitatividad de la comunidad?**  
+Porque se encarga de medir la distribución de las abundancias, la cual nos ayuda a determinar que tan uniforme es la distribución de especies en un sitio, si es uniforme se dice que es un sitio equitativo y si no, no lo es.
 
 **4. ¿Cuál sitio parece tener mayor diversidad según la curva de rarefacción? ¿Por qué?**
 
-**5. ¿Cómo afecta el tamaño de la muestra en la forma de la curva?**
+**5. ¿Cómo afecta el tamaño de la muestra en la forma de la curva?**  
+Afecta principalmente en el tiempo de estabilización o tamaño de la curva, mientras más pequeña es una muestra es altamente probable que la curva se estabilice rápidamente, ya que no será posible detectar la maypr cantidad de especies, por el contrario, si la muestra es más grande es probable seguir encontrando especies, por lo tanto, la curva demorará más tiempo en estabilizarse.
 
 **6. ¿Cuál de estos índices es más sensible a la diferencia en abundancias?**
 
@@ -701,6 +704,7 @@ detach(todos_datos)
 
 **8. ¿Cómo interpretas la forma de las curvas de abundancia?**  
 Que en el caso de los sitios que tienen muchos individuos, pero solo una especie, como la bolsa naranja y verde, su curva es una línea recta, a diferencia de las bolsas con más especies como la bolsa luna, verde y sonrisa, que su curva alcanza la mayor altitud, que alcanzan el máximo de especies. Las otras curvas se asemejan a las curvas vistas en clase, donde falta un muestreo del sitio. En este caso sabemos que no falta mas muestreos, pero sirven como ejemplo para observar la diversidad de especies en sitios con el máximo conocido de especies, pocas especies y sitios con dominancia de especies.  
+
 **9. ¿Qué implicaciones tienen para la dominancia de especies?**
 
 
@@ -709,5 +713,6 @@ Que en el caso de los sitios que tienen muchos individuos, pero solo una especie
 
 
 **11. ¿Cuál índice te pareció más útil y por qué?**  
-De los índices alfa, el que más nos pareció útil fue el índice de Shannon, este índice nos permite saber cómo está distribuido nuestros sitios, además, al tomar en cuenta la abundancia de las especies permite una mejor estimación de la diversidad. Complementario a este índice, el índice de Pielou es otro índice que nos parece fácil de interpretar. 
+De los índices alfa, el que más nos pareció útil fue el índice de Shannon, este índice nos permite saber cómo está distribuido nuestros sitios, además, al tomar en cuenta la abundancia de las especies permite una mejor estimación de la diversidad. Complementario a este índice, el índice de Pielou es otro índice que nos parece fácil de interpretar.  
 
+**12. ¿Cómo podrías aplicar este análisis en estudios ecológicos reales?**
