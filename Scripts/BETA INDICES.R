@@ -18,4 +18,4 @@ print(jaccard_distancia)
 #Bray-Curtis:
 bray_distancia<- vegdist(datos_beta_1[ ,-1], method = "bray")
 print(bray_distancia)
-V#########
+#########
