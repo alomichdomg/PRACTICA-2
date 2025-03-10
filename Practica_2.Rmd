@@ -7,7 +7,7 @@ output: html_document
 
 ## **Introducción**
 
-Los índices biológicos son determinados a través de las características de las comunidades biológicas como lo es la abundancia y la riqueza. Las alteraciones físicas y los cambios en variables ambientales, como la temperatura o la salinidad, pH, y contaminación dan paso a variaciones en la dinámica de la comunidad, estos cambios pueden ser monitoreados de manera útil para conocer los estados actuales de la comunidad, como estos se ven afectados, las implicaciones que tienen, sus interacciones, y posibles soluciones,  para poder evaluar su equilibrio y tomar acciones que permitan evitar un aumento en el deterioro del equilibrio de la comunidad y tomar medidas preventivas para lugares con tendencias similares (Spellerberg, 2005).
+Los índices biológicos son determinados a través de las características de las comunidades biológicas como lo es la abundancia y la riqueza. Las alteraciones físicas y los cambios en variables ambientales, como la temperatura o la salinidad, pH, y contaminación dan paso a variaciones en la dinámica de la comunidad, estos cambios pueden ser monitoreados de manera útil para conocer los estados actuales de la comunidad, como estos se ven afectados, las implicaciones que tienen, sus interacciones, y posibles soluciones, para poder evaluar su equilibrio y tomar acciones que permitan evitar un aumento en el deterioro del equilibrio de la comunidad y tomar medidas preventivas para lugares con tendencias similares (Spellerberg, 2005).
 
 La biodiversidad se puede definir como la variedad de genes, especies y ecosistemas presentes en un sitio definido, dicha variabilidad es el resultado de diversos eventos evolutivos a lo largo del tiempo. En ecología, la biodiversidad es un concepto muy importante, ya que nos ayuda a comprender la composición y funcionamiento de diferentes comunidades o ecosistemas (Purvis & Hector, 2000).
 
@@ -686,8 +686,10 @@ detach(todos_datos)
 
 ```
 
-## **BETA**  
-*Indice de Jaccard:
+## **BETA**
+
+\*Indice de Jaccard:
+
 ```{r}
 datos_beta <- read.csv("DATOS/beta - Hoja 1.csv")
 
@@ -702,6 +704,7 @@ print(jaccard_distancia)
 ```
 
 Bray-Curtis:
+
 ```{r}
 datos_beta <- read.csv("DATOS/beta - Hoja 1.csv")
 
@@ -715,7 +718,6 @@ datos_beta_1[] <- lapply(datos_beta_pa, as.numeric) #HACER LOS DATOS NUMERICOS, 
 bray_distancia<- vegdist(datos_beta_1, method = "bray")
 print(bray_distancia)
 ```
-
 
 ## **Discusión**
 
@@ -797,88 +799,85 @@ library(knitr)
 kable(indices, caption = "Comparacion de indices de diversidad por bolsa")
 
 ```
-###**Discusión**
 
-La bolsa de sonrisa tuvo un índice de Shannon muy alto (3.39) por lo que expresa que existe una riqueza muy alta y una abundancia equitativa en la muestra. Para el índice de Simpson y Simpson inverso reafirman el índice anterior ya que demuestra que no presenta una dominancia por una especie en particular (0.10 y 9.46) y por lo tanto es una muestra donde existen condiciones que permiten que todas las especies habiten. El índice de Gini refleja la abundancia desigual en la población por lo que la bolsa sonrisa se tiene una ligera desigualdad en comparación con otras bolsas como ocurre con la bolsa luna la cual presente una abundancia desigual muy pequeña. Para el índice de Chao el cual estima la riqueza de la población teniendo en cuenta a las especies que solo aparecen una y dos veces se obtuvo un resultado de 12 lo cual refleja la riqueza real de la muestra. Estos resultados son comunes de encontrar en espacios con un equilibrio ecológico sano y con los nutrientes y condiciones necesarias que permiten que todas las especies aumenten su abundancia y la riqueza sea grande, como en selvas y bosques. 
-Para la bolsa verde los índices de Shannon y Pielou son de 0 por lo que existe una riqueza de 1, indicando que presenta una dominancia de una sola especie la cual es abundante, esto se confirma con el índice de Simpson que da como resultado 1, para el índice de Gini no se pudo realizar debido a que solo existe una sola especie teniendo NA como resultado. Por lo que para el índice de Chao también se obtiene un resultado de 1. Estos resultados son comunes tenerlos en ambientes donde las condiciones solo permiten que una especie sobreviva o la misma especie provoca la eliminación y el desbalance del lugar como ocurre con especies invasoras (Lohbeck et al., 2016). 
+La bolsa de sonrisa tuvo un índice de Shannon muy alto (3.39) por lo que expresa que existe una riqueza muy alta y una abundancia equitativa en la muestra. Para el índice de Simpson y Simpson inverso reafirman el índice anterior ya que demuestra que no presenta una dominancia por una especie en particular (0.10 y 9.46) y por lo tanto es una muestra donde existen condiciones que permiten que todas las especies habiten. El índice de Gini refleja la abundancia desigual en la población por lo que la bolsa sonrisa se tiene una ligera desigualdad en comparación con otras bolsas como ocurre con la bolsa luna la cual presente una abundancia desigual muy pequeña. Para el índice de Chao el cual estima la riqueza de la población teniendo en cuenta a las especies que solo aparecen una y dos veces se obtuvo un resultado de 12 lo cual refleja la riqueza real de la muestra. Estos resultados son comunes de encontrar en espacios con un equilibrio ecológico sano y con los nutrientes y condiciones necesarias que permiten que todas las especies aumenten su abundancia y la riqueza sea grande, como en selvas y bosques. Para la bolsa verde los índices de Shannon y Pielou son de 0 por lo que existe una riqueza de 1, indicando que presenta una dominancia de una sola especie la cual es abundante, esto se confirma con el índice de Simpson que da como resultado 1, para el índice de Gini no se pudo realizar debido a que solo existe una sola especie teniendo NA como resultado. Por lo que para el índice de Chao también se obtiene un resultado de 1. Estos resultados son comunes tenerlos en ambientes donde las condiciones solo permiten que una especie sobreviva o la misma especie provoca la eliminación y el desbalance del lugar como ocurre con especies invasoras (Lohbeck et al., 2016).
 
-En el sitio luna el resultado de los distintos índices nos indica que el sitio esta en equidad, un valor “alto” en el índice de Shannon, un valor que tiene a O en el índice de Simpson y su inverso que tiene a la Riqueza del sistema, el índice de chao1 es igual a la riqueza del sitio. El valor del índice de Gini nos indica que el sitio tiene una distribución más equitativa y no hay dominancia de una especie.  
+En el sitio luna el resultado de los distintos índices nos indica que el sitio esta en equidad, un valor “alto” en el índice de Shannon, un valor que tiene a O en el índice de Simpson y su inverso que tiene a la Riqueza del sistema, el índice de chao1 es igual a la riqueza del sitio. El valor del índice de Gini nos indica que el sitio tiene una distribución más equitativa y no hay dominancia de una especie.
 
-En el sitio naranja se observa una dominancia de la especie naranja, esto se puede observar en los valores obtenidos en los índices, en el caso del índice de Shannon, Pielou y Gini sus valores o la falta nos indica una dominancia completa de la especie naranja, el índice de chao1 nos da el valor de la riqueza que en este caso es de 1.  
+En el sitio naranja se observa una dominancia de la especie naranja, esto se puede observar en los valores obtenidos en los índices, en el caso del índice de Shannon, Pielou y Gini sus valores o la falta nos indica una dominancia completa de la especie naranja, el índice de chao1 nos da el valor de la riqueza que en este caso es de 1.
 
-La bolsa ultima, a diferencia de la bolsa luna, no cuenta con todas las especies, los índices de Shannon indica que no hay dominancia de una especie y de Pielou indican que las especies están en abundancias y no hay una dominancia marcada. En el caso del índice de Gini, los valores obtenidos están en la mitad del rango, esto puede indicar que hay un balance entre dominancia y equidad de una especia, si vemos la grafica de abundancias observados que la especie azul tienen mayor numero de abundancia a comparación que otras especies, pero no representa una dominancia. 
-
+La bolsa ultima, a diferencia de la bolsa luna, no cuenta con todas las especies, los índices de Shannon indica que no hay dominancia de una especie y de Pielou indican que las especies están en abundancias y no hay una dominancia marcada. En el caso del índice de Gini, los valores obtenidos están en la mitad del rango, esto puede indicar que hay un balance entre dominancia y equidad de una especia, si vemos la grafica de abundancias observados que la especie azul tienen mayor numero de abundancia a comparación que otras especies, pero no representa una dominancia.
 
 ## **Cuestionario**
 
-**1. ¿Cómo varían los valores de los índices entre los sitios? ¿Qué diferencias resaltan?**
-El índice de Shannon indica la riqueza y abundancia de especies. En este caso la bolsa luna y sonrisa tienen los valores mas altos exponiendo una abundancia equilibrada entre las especies que hay, caso contrario ocurre con la bolsa naranja y verde donde únicamente se tiene una riqueza muy baja y con una abundancia de esta especie muy alta, dando como resultado un índice de Shannon muy bajo. 
-El índice de Pielou que muestra que tal equitativa es la población, tenido como resultados a la bolsa luna y sonrisa con valores altos indicando una abundancia de especies equilibrada, las bolsas estrella, corazón y la última tienen valores menores debido a que la abundancia en algunas de sus especies es mucho mayor a otros, indicando una equitatividad menor. Por otro lado, están las bolsas verde y naranja que tienen un índice de 0 ya que presentan la dominancia de una sola especie. 
-El índice de Simpson nos indica la dominancia de una especie teniendo 1 como el dominio de una sola especie, cosa que pudo ser observada en la bolsa naranja y verde, al contrario de la bolsa luna, donde el inverso de Simpson tienen un valor muy parecido a su riqueza indicando que no existe una dominancia de una especie, si no que la abundancia de la riqueza esta equilibrada. 
-El índice de Gini refleja la abundancia desigual en la población por lo que la bolsa luna tiene un valor bajo indicando una desigualdad entre la abundancia de especies baja, en cambio la bolsa naranja, verde y estrella tienen valores altos, reafirmándose así la dominancia de una especie. 
-El índice de Chao sirve para estimar la riqueza de la población teniendo en cuenta a las especies que solo aparecen una y dos veces, obteniendo una riqueza mayor en las bolsas luna,  sonrisa y estrella, y valores muy bajos en las bolsas verde y naranja. 
-Los valores de los índices cambian mucho de acuerdo a la bolsa ya que también cambia la abundancia y riqueza las cuales determinan los valores de los mismos, sin embargo, todos los valores dados por los otros índices respaldan y enfatizan los patrones que presenta cada bolsa. 
+**1. ¿Cómo varían los valores de los índices entre los sitios? ¿Qué diferencias resaltan?** El índice de Shannon indica la riqueza y abundancia de especies. En este caso la bolsa luna y sonrisa tienen los valores mas altos exponiendo una abundancia equilibrada entre las especies que hay, caso contrario ocurre con la bolsa naranja y verde donde únicamente se tiene una riqueza muy baja y con una abundancia de esta especie muy alta, dando como resultado un índice de Shannon muy bajo. El índice de Pielou que muestra que tal equitativa es la población, tenido como resultados a la bolsa luna y sonrisa con valores altos indicando una abundancia de especies equilibrada, las bolsas estrella, corazón y la última tienen valores menores debido a que la abundancia en algunas de sus especies es mucho mayor a otros, indicando una equitatividad menor. Por otro lado, están las bolsas verde y naranja que tienen un índice de 0 ya que presentan la dominancia de una sola especie. El índice de Simpson nos indica la dominancia de una especie teniendo 1 como el dominio de una sola especie, cosa que pudo ser observada en la bolsa naranja y verde, al contrario de la bolsa luna, donde el inverso de Simpson tienen un valor muy parecido a su riqueza indicando que no existe una dominancia de una especie, si no que la abundancia de la riqueza esta equilibrada. El índice de Gini refleja la abundancia desigual en la población por lo que la bolsa luna tiene un valor bajo indicando una desigualdad entre la abundancia de especies baja, en cambio la bolsa naranja, verde y estrella tienen valores altos, reafirmándose así la dominancia de una especie. El índice de Chao sirve para estimar la riqueza de la población teniendo en cuenta a las especies que solo aparecen una y dos veces, obteniendo una riqueza mayor en las bolsas luna, sonrisa y estrella, y valores muy bajos en las bolsas verde y naranja. Los valores de los índices cambian mucho de acuerdo a la bolsa ya que también cambia la abundancia y riqueza las cuales determinan los valores de los mismos, sin embargo, todos los valores dados por los otros índices respaldan y enfatizan los patrones que presenta cada bolsa.
 
-**2. ¿Cuál índice es más sensible a especies raras?**
-El índice de Chao1, debiido a que se encaraga de estimar la riqueza de especies tomando en cuenya las especies raras, de modo que prioriza los singletons y doubletons, siguiendo la lógica de que si hay esas especies raras es probable que haya especies aún más raras.
+**2. ¿Cuál índice es más sensible a especies raras?** El índice de Chao1, debiido a que se encaraga de estimar la riqueza de especies tomando en cuenya las especies raras, de modo que prioriza los singletons y doubletons, siguiendo la lógica de que si hay esas especies raras es probable que haya especies aún más raras.
 
 **3. ¿Por qué el índice de Pielou nos da información sobre la equitatividad de la comunidad?**\
 Porque se encarga de medir la distribución de las abundancias, la cual nos ayuda a determinar que tan uniforme es la distribución de especies en un sitio, si es uniforme se dice que es un sitio equitativo y si no, no lo es.
 
-**4. ¿Cuál sitio parece tener mayor diversidad según la curva de rarefacción? ¿Por qué?**
-En la curva de rarefaccion, se observa que la bolsa luna, estrella y sonrisa tienen patrones muy similares, lo cual coincide con nuestra base de datos. Sin embargo, si solo nos basamos en la gráfica podemos observar que en el caso de la bolsa estrella, hay una diferencia que se percibe  al momento de estabilizarse, lo que suguiere que hay más especies en ese sitio, por lo tanto, podríamos concluír que la bolsa estrella presenta una mayor diversidad.
+**4. ¿Cuál sitio parece tener mayor diversidad según la curva de rarefacción? ¿Por qué?** En la curva de rarefaccion, se observa que la bolsa luna, estrella y sonrisa tienen patrones muy similares, lo cual coincide con nuestra base de datos. Sin embargo, si solo nos basamos en la gráfica podemos observar que en el caso de la bolsa estrella, hay una diferencia que se percibe al momento de estabilizarse, lo que suguiere que hay más especies en ese sitio, por lo tanto, podríamos concluír que la bolsa estrella presenta una mayor diversidad.
 
-**5. ¿Cómo afecta el tamaño de la muestra en la forma de la curva?**
-Afecta principalmente en el tiempo de estabilización o tamaño de la curva, mientras más pequeña es una muestra es altamente probable que la curva se estabilice rápidamente, ya que no será posible detectar la maypr cantidad de especies, por el contrario, si la muestra es más grande es probable seguir encontrando especies, por lo tanto, la curva demorará más tiempo en estabilizarse.
+**5. ¿Cómo afecta el tamaño de la muestra en la forma de la curva?** Afecta principalmente en el tiempo de estabilización o tamaño de la curva, mientras más pequeña es una muestra es altamente probable que la curva se estabilice rápidamente, ya que no será posible detectar la maypr cantidad de especies, por el contrario, si la muestra es más grande es probable seguir encontrando especies, por lo tanto, la curva demorará más tiempo en estabilizarse.
 
-**6. ¿Cuál de estos índices es más sensible a la diferencia en abundancias?**
-El índice Simpson y sus variaciones (inverso y Gini) debido a que toma en cuenta no solo la riqueza, si no el numero de individuos y el numero de veces que se encuentra la especie en la población, por lo que la equitatividad tiene un gran peso ya que mientras más dominante sea una especie, el valor de este índice incrementará ya que la probabilidad de que las 2 especies tomas al azar sean de la misma especie incrementa, en cambio cuando existe una equidad distribuida entre todas las especies este disminuirá. 
-**7. ¿Qué interpretación ecológica tienen las diferencias entre sitios?**
-Las muestras que tienen una dominancia muy marcada como lo es la bolsa naranja y verde indican que hay una especie la cual tiene una alta compatibilidad con en clima y los recursos naturales que hay en el lugar y que son condiciones adversas para la mayoría de las especies ya sea por la falta de alimento, las condiciones climáticas o que son presas de la especie dominante lo que les impide a las otras especies tener una abundancia alta, reflejando una interacción antagonista (Ansari, 2024). 
-En cambio, las especies que tienen una riqueza alta y una abundancia equilibrada como ocurre en la bolsa de luna, sonrisa y corazón que tienen una riqueza alta y una abundancia relativamente equilibrada indica que existen condiciones que permiten el crecimiento de diversas especies, sin darle una ventaja a una especie en específico, permitiendo que todas habiten en el especio, pudiendo tener interacciones mutualistas, y de competencia, sin tener una especie extremadamente dominante.
+**6. ¿Cuál de estos índices es más sensible a la diferencia en abundancias?** El índice Simpson y sus variaciones (inverso y Gini) debido a que toma en cuenta no solo la riqueza, si no el numero de individuos y el numero de veces que se encuentra la especie en la población, por lo que la equitatividad tiene un gran peso ya que mientras más dominante sea una especie, el valor de este índice incrementará ya que la probabilidad de que las 2 especies tomas al azar sean de la misma especie incrementa, en cambio cuando existe una equidad distribuida entre todas las especies este disminuirá.
 
-**8. ¿Cómo interpretas la forma de las curvas de abundancia?**
-Que en el caso de los sitios que tienen muchos individuos, pero solo una especie, como la bolsa naranja y verde, su curva es una línea recta, a diferencia de las bolsas con más especies como la bolsa luna, verde y sonrisa, que su curva alcanza la mayor altitud, que alcanzan el máximo de especies.
+**7. ¿Qué interpretación ecológica tienen las diferencias entre sitios?** Las muestras que tienen una dominancia muy marcada como lo es la bolsa naranja y verde indican que hay una especie la cual tiene una alta compatibilidad con en clima y los recursos naturales que hay en el lugar y que son condiciones adversas para la mayoría de las especies ya sea por la falta de alimento, las condiciones climáticas o que son presas de la especie dominante lo que les impide a las otras especies tener una abundancia alta, reflejando una interacción antagonista (Ansari, 2024). En cambio, las especies que tienen una riqueza alta y una abundancia equilibrada como ocurre en la bolsa de luna, sonrisa y corazón que tienen una riqueza alta y una abundancia relativamente equilibrada indica que existen condiciones que permiten el crecimiento de diversas especies, sin darle una ventaja a una especie en específico, permitiendo que todas habiten en el especio, pudiendo tener interacciones mutualistas, y de competencia, sin tener una especie extremadamente dominante.
+
+**8. ¿Cómo interpretas la forma de las curvas de abundancia?** Que en el caso de los sitios que tienen muchos individuos, pero solo una especie, como la bolsa naranja y verde, su curva es una línea recta, a diferencia de las bolsas con más especies como la bolsa luna, verde y sonrisa, que su curva alcanza la mayor altitud, que alcanzan el máximo de especies.
 
 Las otras curvas se asemejan a las curvas vistas en clase, donde falta un muestreo del sitio. En este caso sabemos que no falta mas muestreos, pero sirven como ejemplo para observar la diversidad de especies en sitios con el máximo conocido de especies, pocas especies y sitios con dominancia de especies.
 
 **9. ¿Qué implicaciones tienen para la dominancia de especies?**
 
-En las bolsas con dominancia de especies, los índices de Shannon, Pielou y Ginni se mantienen en 0, lo que indica una alta dominancia de una sola especie en este caso y una riqueza igual a 1 si observamos el índice de Chao1. El índice de Simspon da un valor de 1 ya que es un índice que dice que la probabilidad de obtener dos individuos de la misma propalación, en este caso es el valor máximo ya que solo hay una especie.
-La dominancia de especies, indica que estos individuos obtienen una mayor ventaja a comparación de otras especies, obtienen un mayor numero de recursos, que en ciertos casos desestabiliza a las comunidades.
+En las bolsas con dominancia de especies, los índices de Shannon, Pielou y Ginni se mantienen en 0, lo que indica una alta dominancia de una sola especie en este caso y una riqueza igual a 1 si observamos el índice de Chao1. El índice de Simspon da un valor de 1 ya que es un índice que dice que la probabilidad de obtener dos individuos de la misma propalación, en este caso es el valor máximo ya que solo hay una especie. La dominancia de especies, indica que estos individuos obtienen una mayor ventaja a comparación de otras especies, obtienen un mayor numero de recursos, que en ciertos casos desestabiliza a las comunidades.
 
-**10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**  
-La mayoría de los sitios a excepción de la bolsa naranja y verde, presentan valores parecidos en los índices, mas cercanos a valores que indican la equidad del sistema, los valores cambian debido a que los sitios tienen diferente número de especies y no todos los sitios tienen todas las especies. 
+**10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**\
+La mayoría de los sitios a excepción de la bolsa naranja y verde, presentan valores parecidos en los índices, mas cercanos a valores que indican la equidad del sistema, los valores cambian debido a que los sitios tienen diferente número de especies y no todos los sitios tienen todas las especies.
 
-**11. ¿Cuál índice te pareció más útil y por qué?**
-De los índices alfa, el que más nos pareció útil fue el índice de Shannon, este índice nos permite saber cómo está distribuido nuestros sitios, además, al tomar en cuenta la abundancia de las especies permite una mejor estimación de la diversidad. Complementario a este índice, el índice de Pielou es otro índice que nos parece fácil de interpretar.
+**11. ¿Cuál índice te pareció más útil y por qué?** De los índices alfa, el que más nos pareció útil fue el índice de Shannon, este índice nos permite saber cómo está distribuido nuestros sitios, además, al tomar en cuenta la abundancia de las especies permite una mejor estimación de la diversidad. Complementario a este índice, el índice de Pielou es otro índice que nos parece fácil de interpretar.
 
 **12. ¿Cómo podrías aplicar este análisis en estudios ecológicos reales?**
 
 Conocer los índices de diversidad permiten describir los componentes del sistema que se esta estudiando, para que posteriormente se realicen comparaciones entre distintos sistemas. Es necesario generar medidas de diversidad para poner a prueba teorías en base a la coexistencia de especies, los procesos dinámicos que ocurren, el impacto que tiene la actividad humana y otras comunidades. Haciendo posible la comparación entre distintos ambientes y estudiar los cambios en la magnitud de la diversidad lo que permite justifar acciones para la protección y conservación de los ecosistemas (Moreno et al., 2011. )
 
+### **Conclusión** 
+
+Los índices alfa y beta como Shannon, Simpson, Pielou, Gini, Chao, Jaccard y Bray-Curtis, permiten conocer la riqueza, abundancia, equitatividad, y estructura de las comunidades ecológicas. Permite identificar especies dominantes o si por el contrario existen comunidades con equitatividad, además de conocer la manera en la que el ambiente impacta en estos permitiendo estudiar y entender la importancia de las especies en conjunto a las condiciones ambientales para la existencia y dinámica de las especies. Por lo que da paso a conocer y estudiar las interacciones y problemas del ecosistema, para proceder con su conservación y lograr la prevención de perdida de ambientes.
+
+### **Contribuciones del Equipo**
+
+Redacto introduccion : Adriana Melisa e Isabel Herrera
+
+Cargó y preparó datos para el analisis: Adriana Melisa, Isabel Herrera y Alondra Michelle
+
+Realizó analisis de diversidad alfa: Adriana Melisa, Isabel Herrera y Alondra Michelle
+
+Realizó analisis de diversidad beta:Alondra Michelle
+
+Generó las gráficas de abundancias ordenadas:Adriana Melisa, Isabel Herrera y Alondra Michelle
+
+Redactó la discusión de los resultados:Adriana Melisa, Isabel Herrera y Alondra Michelle
+
+conclusión: Isabel Herrera
 
 ### **Referencias**
 
-Aquí está tu lista de referencias ordenada alfabéticamente:  
+Ansari, S. (2024, 4 septiembre). *What is Ecological Dominance And Its Significance? \| UPSC Environment*. **TOPPERMENT IAS**. <https://topperment.com/what-is-ecological-dominance-and-its-significance-upsc-environment/>
 
----
+Chao, A., & Chiu, C. (2016). *Species Richness: Estimation and comparison*. **Wiley StatsRef: Statistics Reference Online**, 1–26. <https://doi.org/10.1002/9781118445112.stat03432.pub2>
 
-Ansari, S. (2024, 4 septiembre). *What is Ecological Dominance And Its Significance? | UPSC Environment*. **TOPPERMENT IAS**. [https://topperment.com/what-is-ecological-dominance-and-its-significance-upsc-environment/](https://topperment.com/what-is-ecological-dominance-and-its-significance-upsc-environment/)  
+Lande, R. (1996). *Statistics and Partitioning of Species Diversity, and Similarity among Multiple Communities*. **Oikos**, 76(1), 5–13. <https://doi.org/10.2307/3545743>
 
-Chao, A., & Chiu, C. (2016). *Species Richness: Estimation and comparison*. **Wiley StatsRef: Statistics Reference Online**, 1–26. [https://doi.org/10.1002/9781118445112.stat03432.pub2](https://doi.org/10.1002/9781118445112.stat03432.pub2)  
+Lohbeck, M., Bongers, F., Martinez‐Ramos, M., & Poorter, L. (2016). *The importance of biodiversity and dominance for multiple ecosystem functions in a human‐modified tropical landscape*. **Ecology**, 97(10), 2772-2779. <https://doi.org/10.1002/ecy.1499>
 
-Lande, R. (1996). *Statistics and Partitioning of Species Diversity, and Similarity among Multiple Communities*. **Oikos**, 76(1), 5–13. [https://doi.org/10.2307/3545743](https://doi.org/10.2307/3545743)  
+Moreno, C. E., Barragan, F., Pineda, E., & Pavón, N. (2011). *Reanálisis de la diversidad alfa: alternativas para interpretar y comparar información sobre comunidades ecológicas*. **Revista mexicana de biodiversidad**, 82(4), 1249–1261. <https://doi.org/10.22201/IB.20078706E.2011.4.745>
 
-Lohbeck, M., Bongers, F., Martinez‐Ramos, M., & Poorter, L. (2016). *The importance of biodiversity and dominance for multiple ecosystem functions in a human‐modified tropical landscape*. **Ecology**, 97(10), 2772-2779. [https://doi.org/10.1002/ecy.1499](https://doi.org/10.1002/ecy.1499)  
+Purvis, A., & Hector, A. (2000). *Getting the measure of biodiversity*. **Nature**, 405(6783), 212–219. <https://doi.org/10.1038/35012221>
 
-Moreno, C. E., Barragan, F., Pineda, E., & Pavón, N. (2011). *Reanálisis de la diversidad alfa: alternativas para interpretar y comparar información sobre comunidades ecológicas*. **Revista mexicana de biodiversidad**, 82(4), 1249–1261. [https://doi.org/10.22201/IB.20078706E.2011.4.745](https://doi.org/10.22201/IB.20078706E.2011.4.745)  
+Schroeder, P. J., & Jenkins, D. G. (2018). *How robust are popular beta diversity indices to sampling error?* **Ecosphere**, 9(2). <https://doi.org/10.1002/ecs2.2100>
 
-Purvis, A., & Hector, A. (2000). *Getting the measure of biodiversity*. **Nature**, 405(6783), 212–219. [https://doi.org/10.1038/35012221](https://doi.org/10.1038/35012221)  
+Spellerberg, I. F. (2005). *Biological indicators and indices*. En **Cambridge University Press eBooks** (pp. 152-190). <https://doi.org/10.1017/cbo9780511614699.008>
 
-Schroeder, P. J., & Jenkins, D. G. (2018). *How robust are popular beta diversity indices to sampling error?* **Ecosphere**, 9(2). [https://doi.org/10.1002/ecs2.2100](https://doi.org/10.1002/ecs2.2100)  
-
-Spellerberg, I. F. (2005). *Biological indicators and indices*. En **Cambridge University Press eBooks** (pp. 152-190). [https://doi.org/10.1017/cbo9780511614699.008](https://doi.org/10.1017/cbo9780511614699.008)  
-
-Spellerberg, I. F., & Fedor, P. J. (2003). *A tribute to Claude Shannon (1916–2001) and a plea for more rigorous use of species richness, species diversity and the ‘Shannon–Wiener’ Index*. **Global Ecology and Biogeography**, 12(3), 177–179. [https://doi.org/10.1046/j.1466-822x.2003.00015](https://doi.org/10.1046/j.1466-822x.2003.00015)
-
+Spellerberg, I. F., & Fedor, P. J. (2003). *A tribute to Claude Shannon (1916–2001) and a plea for more rigorous use of species richness, species diversity and the ‘Shannon–Wiener’ Index*. **Global Ecology and Biogeography**, 12(3), 177–179. <https://doi.org/10.1046/j.1466-822x.2003.00015>
