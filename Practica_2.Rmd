@@ -5,9 +5,9 @@ date: "2025-03-09"
 output: html_document
 ---
 
-## *Introducción*
+## **Introducción**
 
-## *Objetivos*
+## **Objetivos**
 
 -   Analizar la estructura de las comunidades con gráficos de abundancias ordenadas.
 
@@ -22,3 +22,160 @@ output: html_document
 -   Calcular la diversidad beta de todos las parejas de sitios utilizando los índices de: Jaccard y Bray-Curtis.
 
 -   Construir una matriz de diferencias (distancias) para cada medida.
+
+## **Resultados**
+
+### Bolsa estrella:
+
+###
+
+```{r message=FALSE, warning=FALSE}
+abundancias_estrella_BD <- data.frame( 
+  especie = c("azul oscuro", "verde claro", "verde menta", "azul claro", 
+              "azul cielo", "rosa mexicano", "amarillo", "rosa claro", "naranja",
+              "rojo", "rosa", "morado"),
+  numero_de_individuos = c(17, 15, 10, 4, 4, 3, 3, 2, 2, 1, 1, 1)
+)
+
+abundancias_estrella <- c(17, 15, 10, 4, 4, 3, 3, 2, 2, 1, 1, 1)
+
+library(ggplot2)
+
+ggplot(abundancias_estrella_BD, aes(x = reorder(especie, -numero_de_individuos), 
+                                 y = numero_de_individuos, 
+                                 fill = especie)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Abundancia de especies de la bolsa estrella",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "azul oscuro" = "darkblue",
+    "verde claro" = "lightgreen",
+    "verde menta" = "mediumspringgreen",
+    "azul claro" = "lightblue",
+    "azul cielo" = "skyblue",
+    "rosa mexicano" = "deeppink",
+    "amarillo" = "yellow",
+    "rosa claro" = "lightpink",
+    "naranja" = "orange",
+    "rojo" = "red",
+    "rosa" = "hotpink",
+    "morado" = "purple"
+  )) +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+
+### *Índices*
+
+**Shannon**
+  
+```{r}
+source("FUNCIONES.R")
+E_shannon <- shannon_mejor(abundancias_estrella)
+print(E_shannon)
+```
+
+###
+
+**Pielou**
+
+```{r}
+E_pielou <- pielou(abundancias_estrella)
+print(E_pielou)
+```
+
+###
+
+**Simpson**
+
+```{r}
+E_simpson <- simpson_funcion(abundancias_estrella)
+print(E_simpson)
+```
+
+
+###
+
+**Simpson inverso**
+
+```{r}
+E_inverso <- inverso_simpson(abundancias_estrella)
+print(E_inverso)
+```
+
+
+### Bolsa corazón: 
+
+###
+
+```{r message=FALSE, warning=FALSE}
+abundancias_corazon_BD <- data.frame( 
+  especie = c("azul oscuro", "rosa mexicano", "amarillo", "rosa claro", "naranja",
+              "rojo", "rosa", "morado"),
+  numero_de_individuos = c(6, 2, 1, 7, 8, 1, 6, 9)
+)
+
+abundancias_corazon <- c(6, 2, 1, 7, 8, 1, 6, 9)
+
+ggplot(abundancias_corazon_BD, aes(x = reorder(especie, -numero_de_individuos), 
+                                    y = numero_de_individuos, 
+                                    fill = especie)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Abundancia de especies de la bolsa corazon",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "azul oscuro" = "darkblue",
+    "rosa mexicano" = "deeppink",
+    "amarillo" = "yellow",
+    "rosa claro" = "lightpink",
+    "naranja" = "orange",
+    "rojo" = "red",
+    "rosa" = "hotpink",
+    "morado" = "purple"
+  )) +
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+###
+
+### *Índices*
+
+**Shannon**
+  
+```{r}
+C_shannon <- shannon_mejor(abundancias_corazon)
+print(C_shannon)
+```
+
+###
+
+**Pielou**
+
+```{r}
+C_pielou <- pielou(abundancias_corazon)
+print(C_pielou)
+```
+
+###
+
+**Simpson**
+
+```{r}
+C_simpson <- simpson_funcion(abundancias_corazon)
+print(C_simpson)
+```
+
+
+###
+
+**Simpson inverso**
+
+```{r}
+C_inverso <- inverso_simpson(abundancias_corazon)
+print(C_inverso)
+```
+
+
+## **Discusión**
