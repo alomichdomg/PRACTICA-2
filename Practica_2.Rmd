@@ -1,6 +1,6 @@
 ---
 title: "Análisis de diversidad de especies en sitios simulados"
-author: "Adriana Melissa Martínez Rojas, Alondra Michelle, Isabel"
+author: "Adriana Melissa Martínez Rojas, Alondra Michelle, Maria Isabel Herrera Oritz"
 date: "2025-03-09"
 output: html_document
 ---
