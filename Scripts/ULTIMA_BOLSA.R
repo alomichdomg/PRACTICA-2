@@ -52,11 +52,28 @@ estimateR(otro_abundancias)
 plot(otro_abundancias)
 #hacer el data frame:
 otro_dataframe <- data.frame(
-  especie_color = otro_nombres,
-  abundancia = otro_abundancias
+  individuos = c(14,10,3,3,2,2,1,1),
+  especies = c("azul cielo", "azul claro", "azul oscuro", "rosa mexicano", 
+               "rosa","rosa claro", 
+               "verde claro", "rojo")
 )
 otro_dataframe
 
-fig3 <- ggplot (otro_dataframe, aes(x= especie_color, y= abundancia))+  
-  geom_bar ( stat = "identity", fill = "#339966") 
+fig3 <- ggplot (otro_dataframe, aes(x= reorder (especies, -individuos),
+                                    y= individuos, fill = especies))+  
+  geom_bar ( stat = "identity") +
+  labs(title = "Abundancia de especies de la ultima bolsa",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "azul cielo" =  "skyblue",
+    "azul claro" =  "lightblue",
+    "azul oscuro" =  "darkblue",
+    "rosa mexicano" =  "deeppink",
+    "rosa" =  "hotpink",
+    "rosa claro" =  "lightpink",
+    "verde claro" =  "lightgreen",
+    "rojo" =  "red"))+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
 fig3

@@ -65,19 +65,39 @@ print(chao_luna[[2]])
 plot(luna_abundancias)
 #hacer el data frame:
 luna_dataframe <- data.frame(
-  abundancia = luna_abundancias,
-  especie_color = luna_conjunto
+  individuos = c(10, 10, 10, 10, 10, 10, 10, 9, 7, 6, 4, 3),
+  especies = c("amarillo", "rosa claro", "azul oscuro", "naranja", "rosa","rojo","morado", 
+                    "rosa mexicano","verde claro","azul claro", "azul cielo", "verde menta")
 )
 luna_dataframe
 
 
 
-fig1 <- ggplot (luna_dataframe, aes(x= especie_color, y= abundancia))+  
-  geom_bar ( stat = "identity", fill = "#6666FF") 
+fig1 <- ggplot (luna_dataframe, aes(x= reorder (especies, -individuos),
+                                    y= individuos, fill = especies))+  
+  geom_bar ( stat = "identity") +
+  labs(title = "Abundancia de especies de la bolsa luna",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "amarillo" = "yellow", 
+      "rosa claro" =  "lightpink",
+      "azul oscuro" =  "darkblue",
+      "naranja" =  "orange",
+      "rosa" =  "hotpink",
+      "rojo" =  "red",
+      "morado" =  "purple",
+      "rosa mexicano" =  "deeppink",
+      "verde claro" =  "lightgreen",
+      "azul claro" =  "lightblue",
+      "azul cielo" =  "skyblue",
+      "verde menta" =  "#33FFFF"))+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+      
 fig1
 
 
-
+library(ggplot2)
 
 
 

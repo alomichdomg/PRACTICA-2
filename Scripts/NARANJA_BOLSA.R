@@ -49,11 +49,21 @@ print(shannon_naranja[[2]])
 plot(naranaja_abundancias)
 #hacer el data frame:
 naranja_dataframe <- data.frame(
-  especie_color = naranja_nombres,
-  abundancia = naranaja_abundancias
+  individuos = c(77),
+  especies = c("naranja")
 )
 naranja_dataframe
 
-fig2 <- ggplot (naranja_dataframe, aes(x= especie_color, y= abundancia))+  
-  geom_bar ( stat = "identity", fill = "orange") 
+
+
+fig2 <- ggplot (naranja_dataframe, aes(x= reorder (especies, -individuos),
+                                    y= individuos, fill = especies))+  
+  geom_bar ( stat = "identity") +
+  labs(title = "Abundancia de especies de la bolsa naranja",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "naranja" =  "orange"))+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
 fig2

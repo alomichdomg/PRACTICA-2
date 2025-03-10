@@ -173,6 +173,7 @@ C_inverso <- inverso_simpson(abundancias_corazon)
 print(C_inverso)
 ```
 
+<<<<<<< HEAD
 ### **Bolsa Luna.**
 
 ### 
@@ -187,14 +188,34 @@ print(luna_abundancias)
 
 #hacer el data frame:
 luna_dataframe <- data.frame(
-  abundancia = luna_abundancias,
-  especie_color = luna_conjunto
+  individuos = c(10, 10, 10, 10, 10, 10, 10, 9, 7, 6, 4, 3),
+  especies = c("amarillo", "rosa claro", "azul oscuro", "naranja", "rosa","rojo","morado", 
+                    "rosa mexicano","verde claro","azul claro", "azul cielo", "verde menta")
 )
 luna_dataframe
 
-plot(luna_abundancias)
-fig1 <- ggplot (luna_dataframe, aes(x= especie_color, y= abundancia))+  
-  geom_bar ( stat = "identity", fill = "#6666FF") 
+
+fig1 <- ggplot (luna_dataframe, aes(x= reorder (especies, -individuos),
+                                    y= individuos, fill = especies))+  
+  geom_bar ( stat = "identity") +
+  labs(title = "Abundancia de especies de la bolsa luna",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "amarillo" = "yellow", 
+      "rosa claro" =  "lightpink",
+      "azul oscuro" =  "darkblue",
+      "naranja" =  "orange",
+      "rosa" =  "hotpink",
+      "rojo" =  "red",
+      "morado" =  "purple",
+      "rosa mexicano" =  "deeppink",
+      "verde claro" =  "lightgreen",
+      "azul claro" =  "lightblue",
+      "azul cielo" =  "skyblue",
+      "verde menta" =  "#33FFFF"))+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+      
 fig1
 ```
 
@@ -268,13 +289,23 @@ print(naranaja_abundancias)
 plot(naranaja_abundancias)
 #hacer el data frame:
 naranja_dataframe <- data.frame(
-  especie_color = naranja_nombres,
-  abundancia = naranaja_abundancias
+  individuos = c(77),
+  especies = c("naranja")
 )
 naranja_dataframe
 
-fig2 <- ggplot (naranja_dataframe, aes(x= especie_color, y= abundancia))+  
-  geom_bar ( stat = "identity", fill = "orange") 
+
+
+fig2 <- ggplot (naranja_dataframe, aes(x= reorder (especies, -individuos),
+                                    y= individuos, fill = especies))+  
+  geom_bar ( stat = "identity") +
+  labs(title = "Abundancia de especies de la bolsa naranja",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "naranja" =  "orange"))+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
 fig2
 ```
 
@@ -337,17 +368,31 @@ print(otro_abundancias)
 
 #hacer el data frame:
 otro_dataframe <- data.frame(
-  especie_color = otro_nombres,
-  abundancia = otro_abundancias
+  individuos = c(14,10,3,3,2,2,1,1),
+  especies = c("azul cielo", "azul claro", "azul oscuro", "rosa mexicano", 
+               "rosa","rosa claro", 
+               "verde claro", "rojo")
 )
 otro_dataframe
 
-fig3 <- ggplot (otro_dataframe, aes(x= especie_color, y= abundancia))+  
-  geom_bar ( stat = "identity", fill = "#339966") 
-fig3
+fig3 <- ggplot (otro_dataframe, aes(x= reorder (especies, -individuos),
+                                    y= individuos, fill = especies))+  
+  geom_bar ( stat = "identity") +
+  labs(title = "Abundancia de especies de la ultima bolsa",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "azul cielo" =  "skyblue",
+    "azul claro" =  "lightblue",
+    "azul oscuro" =  "darkblue",
+    "rosa mexicano" =  "deeppink",
+    "rosa" =  "hotpink",
+    "rosa claro" =  "lightpink",
+    "verde claro" =  "lightgreen",
+    "rojo" =  "red"))+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
-###GRAFICA DE ABUNDANCIAS.
-plot(otro_abundancias)
+fig3
 ```
 
 ### *Índices*
@@ -418,6 +463,99 @@ detach(todos_datos)
 ```
 
 
+#### **Bolsa sonrisa**
+
+```{r}
+sonrisa_abundancias <- c(1,2,2,3,3,4,4,5,5,5,7,9)
+sonrisa_conjunto<- c("rosa claro", "rosa", "morado", "rosa mexicano", "azul claro","verde claro","amarillo", 
+                     "azul cielo","rojo","naranja", "azul oscuro", "verde menta")
+
+names(sonrisa_abundancias)<- sonrisa_conjunto
+print(sonrisa_abundancias)
+
+#data frame
+sonrisa_dataframe <- data.frame(
+  especie_color = sonrisa_conjunto,
+  abundancia = sonrisa_abundancias
+)
+print (sonrisa_dataframe)
+```
+
+**gráfica con ggplot**
+
+```{r}
+G_sonrisa <- ggplot (sonrisa_dataframe, aes(x=especie_color, y= abundancia, fill = especie_color))+  
+  geom_bar(stat = "identity") +
+  labs(title = "Abundancia de especies en la bolsa sonrisa",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "azul oscuro" = "darkblue",
+    "verde claro" = "lightgreen",
+    "verde menta" = "mediumspringgreen",
+    "azul claro" = "lightblue",
+    "azul cielo" = "skyblue",
+    "rosa mexicano" = "deeppink",
+    "amarillo" = "yellow",
+    "rosa claro" = "lightpink",
+    "naranja" = "orange",
+    "rojo" = "red",
+    "rosa" = "hotpink",
+    "morado" = "purple"
+  ))
+print (G_sonrisa)
+```
+
+### *Indices*
+
+**shanon**
+
+```{r}
+shannon_mejor(sonrisa_abundancias)-> shannon_sonrisa
+print(shannon_sonrisa)
+#3.39
+```
+
+**pielou**
+
+```{r}
+pielou(sonrisa_abundancias)-> pielou_sonrisa
+print(pielou_sonrisa)
+#1.36
+```
+
+**simpson**
+
+```{r}
+simpson_funcion(sonrisa_abundancias)-> simpson_sonrisa
+print(simpson_sonrisa)
+#0.10
+```
+
+**simpson inverso**
+
+```{r}
+inverso_simpson(sonrisa_abundancias)-> inverso_sonrisa
+print(inverso_sonrisa)
+#9.46
+```
+
+**gini**
+
+```{r}
+Gini(sonrisa_abundancias)-> gini_sonrisa
+print(gini_sonrisa)
+#0.30
+```
+
+**chao**
+
+```{r}
+estimateR(sonrisa_abundancias)
+#12
+```
+>>>>>>> c25b279ab33d2e3c3360860fd15313c11ec39704
+
 ## **Discusión**
 
 ## **Cuestionario**
@@ -438,9 +576,14 @@ detach(todos_datos)
 
 **8. ¿Cómo interpretas la forma de las curvas de abundancia?**
 
-**9. ¿Qué implicaciones tienen para la dominancia de especies?**  
+**9. ¿Qué implicaciones tienen para la dominancia de especies?**
+
 
 
 **10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**
 
-**11. ¿Cuál índice te pareció más útil y por qué?**
+
+
+**11. ¿Cuál índice te pareció más útil y por qué?**  
+De los índices alfa, el que más nos pareció útil fue el índice de Shannon, este índice nos permite saber cómo está distribuido nuestros sitios, además, al tomar en cuenta la abundancia de las especies permite una mejor estimación de la diversidad. Complementario a este índice, el índice de Pielou es otro índice que nos parece fácil de interpretar. 
+
