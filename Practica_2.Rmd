@@ -27,7 +27,7 @@ output: html_document
 
 ### Bolsa estrella:
 
-###
+### 
 
 ```{r message=FALSE, warning=FALSE}
 abundancias_estrella_BD <- data.frame( 
@@ -65,18 +65,17 @@ ggplot(abundancias_estrella_BD, aes(x = reorder(especie, -numero_de_individuos),
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-
 ### *Índices*
 
 **Shannon**
-  
+
 ```{r}
 source("FUNCIONES.R")
 E_shannon <- shannon_mejor(abundancias_estrella)
 print(E_shannon)
 ```
 
-###
+### 
 
 **Pielou**
 
@@ -85,7 +84,7 @@ E_pielou <- pielou(abundancias_estrella)
 print(E_pielou)
 ```
 
-###
+### 
 
 **Simpson**
 
@@ -94,8 +93,7 @@ E_simpson <- simpson_funcion(abundancias_estrella)
 print(E_simpson)
 ```
 
-
-###
+### 
 
 **Simpson inverso**
 
@@ -104,10 +102,9 @@ E_inverso <- inverso_simpson(abundancias_estrella)
 print(E_inverso)
 ```
 
+### Bolsa corazón:
 
-### Bolsa corazón: 
-
-###
+### 
 
 ```{r message=FALSE, warning=FALSE}
 abundancias_corazon_BD <- data.frame( 
@@ -138,18 +135,18 @@ ggplot(abundancias_corazon_BD, aes(x = reorder(especie, -numero_de_individuos),
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-###
+### 
 
 ### *Índices*
 
 **Shannon**
-  
+
 ```{r}
 C_shannon <- shannon_mejor(abundancias_corazon)
 print(C_shannon)
 ```
 
-###
+### 
 
 **Pielou**
 
@@ -158,7 +155,7 @@ C_pielou <- pielou(abundancias_corazon)
 print(C_pielou)
 ```
 
-###
+### 
 
 **Simpson**
 
@@ -167,8 +164,7 @@ C_simpson <- simpson_funcion(abundancias_corazon)
 print(C_simpson)
 ```
 
-
-###
+### 
 
 **Simpson inverso**
 
@@ -177,7 +173,7 @@ C_inverso <- inverso_simpson(abundancias_corazon)
 print(C_inverso)
 ```
 
-###bolsa sonrisa
+#### **Bolsa sonrisa**
 
 ```{r}
 sonrisa_abundancias <- c(1,2,2,3,3,4,4,5,5,5,7,9)
@@ -195,7 +191,8 @@ sonrisa_dataframe <- data.frame(
 print (sonrisa_dataframe)
 ```
 
-#gráfica con ggplot
+**gráfica con ggplot**
+
 ```{r}
 G_sonrisa <- ggplot (sonrisa_dataframe, aes(x=especie_color, y= abundancia, fill = especie_color))+  
   geom_bar(stat = "identity") +
@@ -219,10 +216,10 @@ G_sonrisa <- ggplot (sonrisa_dataframe, aes(x=especie_color, y= abundancia, fill
 print (G_sonrisa)
 ```
 
+### *Indices*
 
-###*Indices*
+**shanon**
 
-**shanon** 
 ```{r}
 shannon_mejor(sonrisa_abundancias)-> shannon_sonrisa
 print(shannon_sonrisa)
@@ -230,6 +227,7 @@ print(shannon_sonrisa)
 ```
 
 **pielou**
+
 ```{r}
 pielou(sonrisa_abundancias)-> pielou_sonrisa
 print(pielou_sonrisa)
@@ -237,6 +235,7 @@ print(pielou_sonrisa)
 ```
 
 **simpson**
+
 ```{r}
 simpson_funcion(sonrisa_abundancias)-> simpson_sonrisa
 print(simpson_sonrisa)
@@ -244,6 +243,7 @@ print(simpson_sonrisa)
 ```
 
 **simpson inverso**
+
 ```{r}
 inverso_simpson(sonrisa_abundancias)-> inverso_sonrisa
 print(inverso_sonrisa)
@@ -251,6 +251,7 @@ print(inverso_sonrisa)
 ```
 
 **gini**
+
 ```{r}
 Gini(sonrisa_abundancias)-> gini_sonrisa
 print(gini_sonrisa)
@@ -258,34 +259,34 @@ print(gini_sonrisa)
 ```
 
 **chao**
+
 ```{r}
 estimateR(sonrisa_abundancias)
 #12
 ```
 
-
 ## **Discusión**
 
 ## **Cuestionario**
 
-**1. ¿Cómo varían los valores de los índices entre los sitios? ¿Qué diferencias resaltan?**  
+**1. ¿Cómo varían los valores de los índices entre los sitios? ¿Qué diferencias resaltan?**
 
-**2. ¿Cuál índice es más sensible a especies raras?**  
+**2. ¿Cuál índice es más sensible a especies raras?**
 
-**3. ¿Por qué el índice de Pielou nos da información sobre la equitatividad de la comunidad?**  
+**3. ¿Por qué el índice de Pielou nos da información sobre la equitatividad de la comunidad?**
 
-**4. ¿Cuál sitio parece tener mayor diversidad según la curva de rarefacción? ¿Por qué?**  
+**4. ¿Cuál sitio parece tener mayor diversidad según la curva de rarefacción? ¿Por qué?**
 
-**5. ¿Cómo afecta el tamaño de la muestra en la forma de la curva?**  
+**5. ¿Cómo afecta el tamaño de la muestra en la forma de la curva?**
 
-**6. ¿Cuál de estos índices es más sensible a la diferencia en abundancias?**  
+**6. ¿Cuál de estos índices es más sensible a la diferencia en abundancias?**
 
-**7. ¿Qué interpretación ecológica tienen las diferencias entre sitios?**  
+**7. ¿Qué interpretación ecológica tienen las diferencias entre sitios?**
 
-**8. ¿Cómo interpretas la forma de las curvas de abundancia?**  
+**8. ¿Cómo interpretas la forma de las curvas de abundancia?**
 
-**9. ¿Qué implicaciones tienen para la dominancia de especies?**  
+**9. ¿Qué implicaciones tienen para la dominancia de especies?**
 
-**10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**  
+**10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**
 
 **11. ¿Cuál índice te pareció más útil y por qué?**
