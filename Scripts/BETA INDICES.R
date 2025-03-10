@@ -1,11 +1,12 @@
 ###BETA:
 #Jaccard:
+library(vegan)
 datos_beta <- read.csv("DATOS/beta - Hoja 1.csv")
 
 # TIENE QUE SER UN DATA FRAME
 datos_beta_1 <- as.data.frame((datos_beta > 0) * 1)
 
-datos_beta_1[] <- lapply(datos_beta_pa, as.numeric) #HACER LOS DATOS NUMERICOS, para que 
+datos_beta_1[] <- lapply(datos_beta_1, as.numeric) #HACER LOS DATOS NUMERICOS, para que 
 #los detecte
 
 # Calcular índice de Jaccard
