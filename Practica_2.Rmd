@@ -6,6 +6,14 @@ output: html_document
 ---
 
 ## **Introducción**
+La biodiversidad se puede definir como la variedad de genes, especies y ecosistemas presentes en un sitio definido, dicha variabilidad es el resultado de diversos eventos evolutivos a lo largo del tiempo. En ecología, la biodiversidad es un concepto muy importante, ya que nos ayuda a comprender la composición y funcionamiento de diferentes comunidades o ecosistemas (Purvis & Hector, 2000).  
+
+La diversidad alfa es un concepto muy utilizado en ecología, el cual hace referencia al número de especies que hay en un área o ecosistema determinado, se obtiene tomando en cuenta la riqueza y la distribución de especies. Dentro de la diversidad alfa, encontramos al índice de Shannon el cual mide la incertidumbre de identificar una especie aleatoriamente (Spellerberg & Fedor, 2003). El índice de Simpson en su versión normal e inversa, los cuales nos dan información sobre la probabilidad de que dos individuos seleccionados aleatoriamente pertenezcan a la misma especie (Lande, 1996). El índice de Pielou, el cual evalúa la equitatividad y finalmente, el índice de Chao1, que nos da un acercamiento real a la riqueza de especies, eliminando el sesgo probable al momento de realizar un muestreo (Chao & Chiu, 2016).  
+
+Por otro lado, la diversidad beta nos ayuda a identificar las diferencias en la composición entre dos sitios o comunidades, para definir similitud o disimilitud entre las mismas, esto es posible con los índices de Jaccard y Bray-Curtis (Schroeder & Jenkins, 2018).  
+
+Esta práctica consistió en una simulación de diferentes sitios, los cuales fueron representados con bolsas de papel diferenciadas por dibujos, estas bolsas contenían fichas de diferentes colores simulando a las diferentes especies, es decir, cada color representa una especie diferente y la cantidad de fichas indicaba la abundancia. 
+
 
 ## **Objetivos**
 
