@@ -6,7 +6,7 @@
 #############################################################################
 #1.- cargar la tabla al final.
 #rarecurve: tiene que ser una matriz de los datos.
-todos_datos <- read.csv("DATOS/datos_sitios - Hoja 1.csv", )
+todos_datos <- read.csv("DATOS/datos_sitios - Hoja 1.csv")
 
 View(todos_datos)
 attach(todos_datos)
