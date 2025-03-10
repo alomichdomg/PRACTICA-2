@@ -27,7 +27,7 @@ output: html_document
 
 ### Bolsa estrella:
 
-###
+### 
 
 ```{r message=FALSE, warning=FALSE}
 abundancias_estrella_BD <- data.frame( 
@@ -65,18 +65,17 @@ ggplot(abundancias_estrella_BD, aes(x = reorder(especie, -numero_de_individuos),
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-
 ### *Índices*
 
 **Shannon**
-  
+
 ```{r}
 source("FUNCIONES.R")
 E_shannon <- shannon_mejor(abundancias_estrella)
 print(E_shannon)
 ```
 
-###
+### 
 
 **Pielou**
 
@@ -85,7 +84,7 @@ E_pielou <- pielou(abundancias_estrella)
 print(E_pielou)
 ```
 
-###
+### 
 
 **Simpson**
 
@@ -94,8 +93,7 @@ E_simpson <- simpson_funcion(abundancias_estrella)
 print(E_simpson)
 ```
 
-
-###
+### 
 
 **Simpson inverso**
 
@@ -104,10 +102,9 @@ E_inverso <- inverso_simpson(abundancias_estrella)
 print(E_inverso)
 ```
 
+### Bolsa corazón:
 
-### Bolsa corazón: 
-
-###
+### 
 
 ```{r message=FALSE, warning=FALSE}
 abundancias_corazon_BD <- data.frame( 
@@ -138,18 +135,18 @@ ggplot(abundancias_corazon_BD, aes(x = reorder(especie, -numero_de_individuos),
   theme(axis.text.x = element_text(angle = 90))
 ```
 
-###
+### 
 
 ### *Índices*
 
 **Shannon**
-  
+
 ```{r}
 C_shannon <- shannon_mejor(abundancias_corazon)
 print(C_shannon)
 ```
 
-###
+### 
 
 **Pielou**
 
@@ -158,7 +155,7 @@ C_pielou <- pielou(abundancias_corazon)
 print(C_pielou)
 ```
 
-###
+### 
 
 **Simpson**
 
@@ -167,8 +164,7 @@ C_simpson <- simpson_funcion(abundancias_corazon)
 print(C_simpson)
 ```
 
-
-###
+### 
 
 **Simpson inverso**
 
@@ -177,29 +173,274 @@ C_inverso <- inverso_simpson(abundancias_corazon)
 print(C_inverso)
 ```
 
+### **Bolsa Luna.**
+
+### 
+
+```{r}
+luna_abundancias <- c(10, 10, 10, 10, 10, 10, 10, 9, 7, 6, 4, 3)
+luna_conjunto<- c("amarillo", "rosa claro", "azul oscuro", "naranja", "rosa","rojo","morado", 
+                  "rosa mexicano","verde claro","azul claro", "azul cielo", "verde menta")
+
+names(luna_abundancias)<- luna_conjunto
+print(luna_abundancias)
+
+#hacer el data frame:
+luna_dataframe <- data.frame(
+  abundancia = luna_abundancias,
+  especie_color = luna_conjunto
+)
+luna_dataframe
+
+plot(luna_abundancias)
+fig1 <- ggplot (luna_dataframe, aes(x= especie_color, y= abundancia))+  
+  geom_bar ( stat = "identity", fill = "#6666FF") 
+fig1
+```
+
+### 
+
+### *Índices*
+
+**Shannon**
+
+```{r}
+shannon_mejor(luna_abundancias)-> shannon_luna
+print(shannon_luna)
+```
+
+### 
+
+**Pielou**
+
+```{r}
+pielou(luna_abundancias)->pielou_luna
+print(pielou_luna)
+```
+
+### 
+
+**Simpson**
+
+```{r}
+simpson_funcion(luna_abundancias)->simpson_luna
+print(simpson_luna)
+```
+
+### 
+
+**Simpson inverso**
+
+```{r}
+inverso_simpson(luna_abundancias)->inverso_luna
+print(inverso_luna)
+```
+
+### 
+
+***Gini***
+
+```{r}
+#Gini
+Gini(luna_abundancias)->gini_luna
+print(gini_luna)
+```
+
+**chao1**
+
+```{r}
+estimateR(luna_abundancias)->chao_luna
+print(chao_luna[[2]])
+```
+
+### Bolsa naranja:
+
+### 
+
+```{r}
+naranaja_abundancias <- c(77)
+naranja_nombres <- c("naranja")
+
+names(naranaja_abundancias)<- naranja_nombres
+print(naranaja_abundancias)
+
+###GRAFICA DE ABUNDANCIAS.
+plot(naranaja_abundancias)
+#hacer el data frame:
+naranja_dataframe <- data.frame(
+  especie_color = naranja_nombres,
+  abundancia = naranaja_abundancias
+)
+naranja_dataframe
+
+fig2 <- ggplot (naranja_dataframe, aes(x= especie_color, y= abundancia))+  
+  geom_bar ( stat = "identity", fill = "orange") 
+fig2
+```
+
+### *Índices*
+
+**Shannon**
+
+```{r}
+source("FUNCIONES.R")
+shannon_mejor(naranaja_abundancias)-> shannon_naranja
+print(shannon_naranja)
+```
+
+**Pielou**
+
+```{r}
+pielou(naranaja_abundancias)->pielou_naranja
+print(pielou_naranja)
+```
+
+**Simpson**
+
+```{r}
+simpson_funcion(naranaja_abundancias)->simpson_naranja
+print(simpson_naranja)
+```
+
+**Simpson inverso**
+
+```{r}
+inverso_simpson(naranaja_abundancias)->inverso_naranja
+print(inverso_naranja)
+```
+
+***Gini***
+
+```{r}
+Gini(naranaja_abundancias)->gini_naranja
+print(gini_naranja)
+```
+
+**chao1**
+
+```{r}
+estimateR(naranaja_abundancias)->chao_naranja
+print(chao_naranja[[2]])
+```
+
+### Ultima Bolsa:
+
+```{r}
+otro_abundancias <- c(14,10,3,3,2,2,1,1)
+otro_nombres <- c("azul cielo", "azul claro", "azul oscuro", "rosa mexicano", 
+                  "rosa","rosa claro", 
+                  "verde claro", "rojo")
+
+
+names(otro_abundancias)<- otro_nombres
+print(otro_abundancias)
+
+#hacer el data frame:
+otro_dataframe <- data.frame(
+  especie_color = otro_nombres,
+  abundancia = otro_abundancias
+)
+otro_dataframe
+
+fig3 <- ggplot (otro_dataframe, aes(x= especie_color, y= abundancia))+  
+  geom_bar ( stat = "identity", fill = "#339966") 
+fig3
+
+###GRAFICA DE ABUNDANCIAS.
+plot(otro_abundancias)
+```
+
+### *Índices*
+
+**Shannon**
+
+```{r}
+source("FUNCIONES.R")
+shannon_mejor(otro_abundancias)-> shannon_otro
+print(shannon_otro)
+```
+
+**Pielou**
+
+```{r}
+pielou(otro_abundancias)->pielou_otro
+print(pielou_otro)
+```
+
+**Simpson**
+
+```{r}
+simpson_funcion(otro_abundancias)->simpson_otro
+print(simpson_otro)
+```
+
+**Simpson inverso**
+
+```{r}
+inverso_simpson(otro_abundancias)->inverso_otro
+print(inverso_otro)
+```
+
+***Gini***
+
+```{r}
+Gini(otro_abundancias)->gini_otro
+print(gini_otro)
+```
+
+**chao1**
+
+```{r}
+estimateR(otro_abundancias)->chao_otro
+print(chao_otro[[2]])
+```
+
+## **Curva de Rarefraccion todos los sitios**
+```{r}
+#1.- cargar la tabla al final.
+#rarecurve: tiene que ser una matriz de los datos.
+
+todos_datos <- read.csv("DATOS/datos_sitios - Hoja 1.csv", )
+
+View(todos_datos)
+attach(todos_datos)
+numeric_data <- todos_datos [,sapply(todos_datos, is.numeric)]
+str(numeric_data)
+numeric_matrix <- as.matrix(numeric_data)
+numeric_matrix_no_na <- na.omit(numeric_matrix)
+library(iNEXT)
+#install.packages("iNEXT")
+D_abund <- iNEXT(numeric_matrix_no_na, datatype = "abundance")
+plot(D_abund)
+
+detach(todos_datos)
+
+```
+
 
 ## **Discusión**
 
 ## **Cuestionario**
 
-**1. ¿Cómo varían los valores de los índices entre los sitios? ¿Qué diferencias resaltan?**  
+**1. ¿Cómo varían los valores de los índices entre los sitios? ¿Qué diferencias resaltan?**
 
-**2. ¿Cuál índice es más sensible a especies raras?**  
+**2. ¿Cuál índice es más sensible a especies raras?**
 
-**3. ¿Por qué el índice de Pielou nos da información sobre la equitatividad de la comunidad?**  
+**3. ¿Por qué el índice de Pielou nos da información sobre la equitatividad de la comunidad?**
 
-**4. ¿Cuál sitio parece tener mayor diversidad según la curva de rarefacción? ¿Por qué?**  
+**4. ¿Cuál sitio parece tener mayor diversidad según la curva de rarefacción? ¿Por qué?**
 
-**5. ¿Cómo afecta el tamaño de la muestra en la forma de la curva?**  
+**5. ¿Cómo afecta el tamaño de la muestra en la forma de la curva?**
 
-**6. ¿Cuál de estos índices es más sensible a la diferencia en abundancias?**  
+**6. ¿Cuál de estos índices es más sensible a la diferencia en abundancias?**
 
-**7. ¿Qué interpretación ecológica tienen las diferencias entre sitios?**  
+**7. ¿Qué interpretación ecológica tienen las diferencias entre sitios?**
 
-**8. ¿Cómo interpretas la forma de las curvas de abundancia?**  
+**8. ¿Cómo interpretas la forma de las curvas de abundancia?**
 
 **9. ¿Qué implicaciones tienen para la dominancia de especies?**  
 
-**10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**  
+
+**10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**
 
 **11. ¿Cuál índice te pareció más útil y por qué?**

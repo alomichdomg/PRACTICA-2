@@ -40,7 +40,9 @@ print(gini_naranja)
 #0
 
 #Chao1
-estimateR(naranaja_abundancias)
+estimateR(naranaja_abundancias)-> chao_naranja
+print(shannon_naranja[[2]])
+
 #1
 
 ###GRAFICA DE ABUNDANCIAS.

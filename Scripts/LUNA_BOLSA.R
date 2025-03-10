@@ -57,7 +57,8 @@ print(gini_luna)
 #0.1625344
 
 #Chao1
-estimateR(luna_abundancias)
+estimateR(luna_abundancias)->chao_luna
+print(chao_luna[[2]])
 #12
 
 ###GRAFICA DE ABUNDANCIAS.
@@ -69,9 +70,16 @@ luna_dataframe <- data.frame(
 )
 luna_dataframe
 
+
+
 fig1 <- ggplot (luna_dataframe, aes(x= especie_color, y= abundancia))+  
   geom_bar ( stat = "identity", fill = "#6666FF") 
 fig1
+
+
+
+
+
 
 ######################################################################
 #beta
