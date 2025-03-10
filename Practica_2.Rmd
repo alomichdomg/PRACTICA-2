@@ -801,7 +801,9 @@ kable(indices, caption = "Comparacion de indices de diversidad por bolsa")
 
 ```
 
-La bolsa de sonrisa tuvo un índice de Shannon muy alto (3.39) por lo que expresa que existe una riqueza muy alta y una abundancia equitativa en la muestra. Para el índice de Simpson y Simpson inverso reafirman el índice anterior ya que demuestra que no presenta una dominancia por una especie en particular (0.10 y 9.46) y por lo tanto es una muestra donde existen condiciones que permiten que todas las especies habiten. El índice de Gini refleja la abundancia desigual en la población por lo que la bolsa sonrisa se tiene una ligera desigualdad en comparación con otras bolsas como ocurre con la bolsa luna la cual presente una abundancia desigual muy pequeña. Para el índice de Chao el cual estima la riqueza de la población teniendo en cuenta a las especies que solo aparecen una y dos veces se obtuvo un resultado de 12 lo cual refleja la riqueza real de la muestra. Estos resultados son comunes de encontrar en espacios con un equilibrio ecológico sano y con los nutrientes y condiciones necesarias que permiten que todas las especies aumenten su abundancia y la riqueza sea grande, como en selvas y bosques. Para la bolsa verde los índices de Shannon y Pielou son de 0 por lo que existe una riqueza de 1, indicando que presenta una dominancia de una sola especie la cual es abundante, esto se confirma con el índice de Simpson que da como resultado 1, para el índice de Gini no se pudo realizar debido a que solo existe una sola especie teniendo NA como resultado. Por lo que para el índice de Chao también se obtiene un resultado de 1. Estos resultados son comunes tenerlos en ambientes donde las condiciones solo permiten que una especie sobreviva o la misma especie provoca la eliminación y el desbalance del lugar como ocurre con especies invasoras (Lohbeck et al., 2016).
+La bolsa de sonrisa tuvo un índice de Shannon muy alto (3.39) por lo que expresa que existe una riqueza muy alta y una abundancia equitativa en la muestra. Para el índice de Simpson y Simpson inverso reafirman el índice anterior ya que demuestra que no presenta una dominancia por una especie en particular (0.10 y 9.46) y por lo tanto es una muestra donde existen condiciones que permiten que todas las especies habiten. El índice de Gini refleja la abundancia desigual en la población por lo que la bolsa sonrisa se tiene una ligera desigualdad en comparación con otras bolsas como ocurre con la bolsa luna la cual presente una abundancia desigual muy pequeña. Para el índice de Chao el cual estima la riqueza de la población teniendo en cuenta a las especies que solo aparecen una y dos veces se obtuvo un resultado de 12 lo cual refleja la riqueza real de la muestra. Estos resultados son comunes de encontrar en espacios con un equilibrio ecológico sano y con los nutrientes y condiciones necesarias que permiten que todas las especies aumenten su abundancia y la riqueza sea grande, como en selvas y bosques.
+
+Para la bolsa verde los índices de Shannon y Pielou son de 0 por lo que existe una riqueza de 1, indicando que presenta una dominancia de una sola especie la cual es abundante, esto se confirma con el índice de Simpson que da como resultado 1, para el índice de Gini no se pudo realizar debido a que solo existe una sola especie teniendo NA como resultado. Por lo que para el índice de Chao también se obtiene un resultado de 1. Estos resultados son comunes tenerlos en ambientes donde las condiciones solo permiten que una especie sobreviva o la misma especie provoca la eliminación y el desbalance del lugar como ocurre con especies invasoras (Lohbeck et al., 2016).
 
 En el sitio luna el resultado de los distintos índices nos indica que el sitio esta en equidad, un valor “alto” en el índice de Shannon, un valor que tiene a O en el índice de Simpson y su inverso que tiene a la Riqueza del sistema, el índice de chao1 es igual a la riqueza del sitio. El valor del índice de Gini nos indica que el sitio tiene una distribución más equitativa y no hay dominancia de una especie.
 
@@ -843,13 +845,23 @@ La mayoría de los sitios a excepción de la bolsa naranja y verde, presentan va
 
 Conocer los índices de diversidad permiten describir los componentes del sistema que se esta estudiando, para que posteriormente se realicen comparaciones entre distintos sistemas. Es necesario generar medidas de diversidad para poner a prueba teorías en base a la coexistencia de especies, los procesos dinámicos que ocurren, el impacto que tiene la actividad humana y otras comunidades. Haciendo posible la comparación entre distintos ambientes y estudiar los cambios en la magnitud de la diversidad lo que permite justifar acciones para la protección y conservación de los ecosistemas (Moreno et al., 2011. )
 
-### **Conclusión** 
+### **Conclusión**
 
 Los índices alfa y beta como Shannon, Simpson, Pielou, Gini, Chao, Jaccard y Bray-Curtis, permiten conocer la riqueza, abundancia, equitatividad, y estructura de las comunidades ecológicas. Permite identificar especies dominantes o si por el contrario existen comunidades con equitatividad, además de conocer la manera en la que el ambiente impacta en estos permitiendo estudiar y entender la importancia de las especies en conjunto a las condiciones ambientales para la existencia y dinámica de las especies. Por lo que da paso a conocer y estudiar las interacciones y problemas del ecosistema, para proceder con su conservación y lograr la prevención de perdida de ambientes.
 
 ### **Evidencia fotográfica**
 
-### **Contribuciones del Equipo**
+![Bolsa Luna](EVIDENCIA%20FOTOGRÁFICA/LUNA.jpeg){width="300"}
+
+![Bolsa Estrella](EVIDENCIA%20FOTOGRÁFICA/ESTRELLA.jpeg){width="300"}
+
+![Bolsa Última](EVIDENCIA%20FOTOGRÁFICA/ÚLTIMA.jpeg){width="300"}
+
+![Bolsa Sonrisa](EVIDENCIA%20FOTOGRÁFICA/SONRISA.jpeg){width="300"}    
+
+![Bolsa Corazon](EVIDENCIA%20FOTOGRÁFICA/CORAZON.jpeg){width="300"}  
+
+## **Contribuciones del Equipo**
 
 Redacto introduccion : Adriana Melissa e Isabel Herrera
 
