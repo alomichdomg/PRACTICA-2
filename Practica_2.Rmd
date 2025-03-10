@@ -24,6 +24,13 @@ output: html_document
 -   Construir una matriz de diferencias (distancias) para cada medida.
 
 ## **Resultados**
+```{r}
+library(DescTools)
+  #install.packages("DescTools")
+library(vegan)
+library(ggplot2)
+```
+
 
 ### Bolsa estrella:
 
