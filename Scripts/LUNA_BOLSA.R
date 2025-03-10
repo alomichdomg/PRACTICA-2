@@ -73,8 +73,7 @@ fig1 <- ggplot (luna_dataframe, aes(x= especie_color, y= abundancia))+
   geom_bar ( stat = "identity", fill = "#6666FF") 
 fig1
 
-##################################################################
-
+######################################################################
 #beta
 #• Calcula la diversidad beta de todos las parejas de sitios utilizando los índices de: 
 #Jaccard y Bray-Curtis.
