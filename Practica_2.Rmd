@@ -33,7 +33,7 @@ Esta práctica consistió en una simulación de diferentes sitios, los cuales fu
 
 ## **Resultados**
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(DescTools)
   #install.packages("DescTools")
 library(vegan)
@@ -126,6 +126,7 @@ print(E_gini)
 
 ```{r}
 E_chao <- estimateR(abundancias_estrella)
+print(E_chao [[2]])
 ```
 
 ### Bolsa corazón:
@@ -211,6 +212,7 @@ print(C_gini)
 
 ```{r}
 C_chao <- estimateR(abundancias_corazon)
+print(C_chao [[2]])
 
 ```
 
@@ -568,7 +570,8 @@ print(gini_sonrisa)
 **Chao**
 
 ```{r}
-estimateR(sonrisa_abundancias)
+estimateR(sonrisa_abundancias) -> chao_sonrisa
+print(chao_sonrisa[[2]])
 #12
 ```
 
@@ -652,7 +655,9 @@ print(gini_verde)
 **Chao**
 
 ```{r}
-estimateR(verde_abundancias)
+estimateR(verde_abundancias) -> chao_verde
+
+print(chao_verde[[2]])
 #1
 ```
 
@@ -684,6 +689,12 @@ detach(todos_datos)
 ## **Cuestionario**
 
 **1. ¿Cómo varían los valores de los índices entre los sitios? ¿Qué diferencias resaltan?**
+El índice de Shannon indica la riqueza y abundancia de especies. En este caso la bolsa luna y sonrisa tienen los valores mas altos exponiendo una abundancia equilibrada entre las especies que hay, caso contrario ocurre con la bolsa naranja y verde donde únicamente se tiene una riqueza muy baja y con una abundancia de esta especie muy alta, dando como resultado un índice de Shannon muy bajo. 
+El índice de Pielou que muestra que tal equitativa es la población, tenido como resultados a la bolsa luna y sonrisa con valores altos indicando una abundancia de especies equilibrada, las bolsas estrella, corazón y la última tienen valores menores debido a que la abundancia en algunas de sus especies es mucho mayor a otros, indicando una equitatividad menor. Por otro lado, están las bolsas verde y naranja que tienen un índice de 0 ya que presentan la dominancia de una sola especie. 
+El índice de Simpson nos indica la dominancia de una especie teniendo 1 como el dominio de una sola especie, cosa que pudo ser observada en la bolsa naranja y verde, al contrario de la bolsa luna, donde el inverso de Simpson tienen un valor muy parecido a su riqueza indicando que no existe una dominancia de una especie, si no que la abundancia de la riqueza esta equilibrada. 
+El índice de Gini refleja la abundancia desigual en la población por lo que la bolsa luna tiene un valor bajo indicando una desigualdad entre la abundancia de especies baja, en cambio la bolsa naranja, verde y estrella tienen valores altos, reafirmándose así la dominancia de una especie. 
+El índice de Chao sirve para estimar la riqueza de la población teniendo en cuenta a las especies que solo aparecen una y dos veces, obteniendo una riqueza mayor en las bolsas luna,  sonrisa y estrella, y valores muy bajos en las bolsas verde y naranja. 
+Los valores de los índices cambian mucho de acuerdo a la bolsa ya que también cambia la abundancia y riqueza las cuales determinan los valores de los mismos, sin embargo, todos los valores dados por los otros índices respaldan y enfatizan los patrones que presenta cada bolsa. 
 
 **2. ¿Cuál índice es más sensible a especies raras?**\
 El índice de Chao1, debiido a que se encaraga de estimar la riqueza de especies tomando en cuenya las especies raras, de modo que prioriza los singletons y doubletons, siguiendo la lógica de que si hay esas especies raras es probable que haya especies aún más raras.
