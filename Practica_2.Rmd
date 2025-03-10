@@ -7,6 +7,8 @@ output: html_document
 
 ## **Introducción**
 
+Los índices biológicos son determinados a través de las características de las comunidades biológicas como lo es la abundancia y la riqueza. Las alteraciones físicas y los cambios en variables ambientales, como la temperatura o la salinidad, pH, y contaminación dan paso a variaciones en la dinámica de la comunidad, estos cambios pueden ser monitoreados de manera útil para conocer los estados actuales de la comunidad, como estos se ven afectados, las implicaciones que tienen, sus interacciones, y posibles soluciones,  para poder evaluar su equilibrio y tomar acciones que permitan evitar un aumento en el deterioro del equilibrio de la comunidad y tomar medidas preventivas para lugares con tendencias similares (Spellerberg, 2005).
+
 La biodiversidad se puede definir como la variedad de genes, especies y ecosistemas presentes en un sitio definido, dicha variabilidad es el resultado de diversos eventos evolutivos a lo largo del tiempo. En ecología, la biodiversidad es un concepto muy importante, ya que nos ayuda a comprender la composición y funcionamiento de diferentes comunidades o ecosistemas (Purvis & Hector, 2000).
 
 La diversidad alfa es un concepto muy utilizado en ecología, el cual hace referencia al número de especies que hay en un área o ecosistema determinado, se obtiene tomando en cuenta la riqueza y la distribución de especies. Dentro de la diversidad alfa, encontramos al índice de Shannon el cual mide la incertidumbre de identificar una especie aleatoriamente (Spellerberg & Fedor, 2003). El índice de Simpson en su versión normal e inversa, los cuales nos dan información sobre la probabilidad de que dos individuos seleccionados aleatoriamente pertenezcan a la misma especie (Lande, 1996). El índice de Pielou, el cual evalúa la equitatividad y finalmente, el índice de Chao1, que nos da un acercamiento real a la riqueza de especies, eliminando el sesgo probable al momento de realizar un muestreo (Chao & Chiu, 2016).
@@ -795,6 +797,10 @@ library(knitr)
 kable(indices, caption = "Comparacion de indices de diversidad por bolsa")
 
 ```
+###**Discusión**
+
+La bolsa de sonrisa tuvo un índice de Shannon muy alto (3.39) por lo que expresa que existe una riqueza muy alta y una abundancia equitativa en la muestra. Para el índice de Simpson y Simpson inverso reafirman el índice anterior ya que demuestra que no presenta una dominancia por una especie en particular (0.10 y 9.46) y por lo tanto es una muestra donde existen condiciones que permiten que todas las especies habiten. El índice de Gini refleja la abundancia desigual en la población por lo que la bolsa sonrisa se tiene una ligera desigualdad en comparación con otras bolsas como ocurre con la bolsa luna la cual presente una abundancia desigual muy pequeña. Para el índice de Chao el cual estima la riqueza de la población teniendo en cuenta a las especies que solo aparecen una y dos veces se obtuvo un resultado de 12 lo cual refleja la riqueza real de la muestra. Estos resultados son comunes de encontrar en espacios con un equilibrio ecológico sano y con los nutrientes y condiciones necesarias que permiten que todas las especies aumenten su abundancia y la riqueza sea grande, como en selvas y bosques. 
+Para la bolsa verde los índices de Shannon y Pielou son de 0 por lo que existe una riqueza de 1, indicando que presenta una dominancia de una sola especie la cual es abundante, esto se confirma con el índice de Simpson que da como resultado 1, para el índice de Gini no se pudo realizar debido a que solo existe una sola especie teniendo NA como resultado. Por lo que para el índice de Chao también se obtiene un resultado de 1. Estos resultados son comunes tenerlos en ambientes donde las condiciones solo permiten que una especie sobreviva o la misma especie provoca la eliminación y el desbalance del lugar como ocurre con especies invasoras (Lohbeck et al., 2016). 
 
 En el sitio luna el resultado de los distintos índices nos indica que el sitio esta en equidad, un valor “alto” en el índice de Shannon, un valor que tiene a O en el índice de Simpson y su inverso que tiene a la Riqueza del sistema, el índice de chao1 es igual a la riqueza del sitio. El valor del índice de Gini nos indica que el sitio tiene una distribución más equitativa y no hay dominancia de una especie.  
 
@@ -853,15 +859,26 @@ Conocer los índices de diversidad permiten describir los componentes del sistem
 
 
 ### **Referencias**
-Purvis, A., & Hector, A. (2000). Getting the measure of biodiversity. Nature, 405(6783), 212–219. https://doi.org/10.1038/35012221  
 
-Spellerberg, I. F., & Fedor, P. J. (2003). A tribute to Claude Shannon (1916–2001) and a plea for more rigorous use of species richness, species diversity and the ‘Shannon–Wiener’ Index. Global Ecology and Biogeography, 12(3), 177–179. https://doi.org/10.1046/j.1466-822x.2003.00015  
+Aquí está tu lista de referencias ordenada alfabéticamente:  
 
-Lande, R. (1996). Statistics and Partitioning of Species Diversity, and Similarity among Multiple Communities. Oikos, 76(1), 5–13. https://doi.org/10.2307/3545743https://www.jstor.org/stable/3545743  
+---
 
-Chao, A., & Chiu, C. (2016). Species Richness: Estimation and comparison. Wiley StatsRef: Statistics Reference Online, 1–26. https://doi.org/10.1002/9781118445112.stat03432.pub2  
+Ansari, S. (2024, 4 septiembre). *What is Ecological Dominance And Its Significance? | UPSC Environment*. **TOPPERMENT IAS**. [https://topperment.com/what-is-ecological-dominance-and-its-significance-upsc-environment/](https://topperment.com/what-is-ecological-dominance-and-its-significance-upsc-environment/)  
 
-Schroeder, P. J., & Jenkins, D. G. (2018). How robust are popular beta diversity indices to sampling error? Ecosphere, 9(2). https://doi.org/10.1002/ecs2.2100
+Chao, A., & Chiu, C. (2016). *Species Richness: Estimation and comparison*. **Wiley StatsRef: Statistics Reference Online**, 1–26. [https://doi.org/10.1002/9781118445112.stat03432.pub2](https://doi.org/10.1002/9781118445112.stat03432.pub2)  
 
+Lande, R. (1996). *Statistics and Partitioning of Species Diversity, and Similarity among Multiple Communities*. **Oikos**, 76(1), 5–13. [https://doi.org/10.2307/3545743](https://doi.org/10.2307/3545743)  
 
+Lohbeck, M., Bongers, F., Martinez‐Ramos, M., & Poorter, L. (2016). *The importance of biodiversity and dominance for multiple ecosystem functions in a human‐modified tropical landscape*. **Ecology**, 97(10), 2772-2779. [https://doi.org/10.1002/ecy.1499](https://doi.org/10.1002/ecy.1499)  
+
+Moreno, C. E., Barragan, F., Pineda, E., & Pavón, N. (2011). *Reanálisis de la diversidad alfa: alternativas para interpretar y comparar información sobre comunidades ecológicas*. **Revista mexicana de biodiversidad**, 82(4), 1249–1261. [https://doi.org/10.22201/IB.20078706E.2011.4.745](https://doi.org/10.22201/IB.20078706E.2011.4.745)  
+
+Purvis, A., & Hector, A. (2000). *Getting the measure of biodiversity*. **Nature**, 405(6783), 212–219. [https://doi.org/10.1038/35012221](https://doi.org/10.1038/35012221)  
+
+Schroeder, P. J., & Jenkins, D. G. (2018). *How robust are popular beta diversity indices to sampling error?* **Ecosphere**, 9(2). [https://doi.org/10.1002/ecs2.2100](https://doi.org/10.1002/ecs2.2100)  
+
+Spellerberg, I. F. (2005). *Biological indicators and indices*. En **Cambridge University Press eBooks** (pp. 152-190). [https://doi.org/10.1017/cbo9780511614699.008](https://doi.org/10.1017/cbo9780511614699.008)  
+
+Spellerberg, I. F., & Fedor, P. J. (2003). *A tribute to Claude Shannon (1916–2001) and a plea for more rigorous use of species richness, species diversity and the ‘Shannon–Wiener’ Index*. **Global Ecology and Biogeography**, 12(3), 177–179. [https://doi.org/10.1046/j.1466-822x.2003.00015](https://doi.org/10.1046/j.1466-822x.2003.00015)
 
