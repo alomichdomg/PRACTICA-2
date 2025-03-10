@@ -9,11 +9,13 @@ datos_beta_1 <- as.data.frame((datos_beta > 0) * 1)
 datos_beta_1[] <- lapply(datos_beta_1, as.numeric) #HACER LOS DATOS NUMERICOS, para que 
 #los detecte
 
+datos_beta_1[ ,-1] #ver datos 
+
 # Calcular índice de Jaccard
-jaccard_distancia <- vegdist(datos_beta_1, method = "jaccard")
+jaccard_distancia <- vegdist(datos_beta_1[ ,-1], method = "jaccard")
 print(jaccard_distancia)
 
 #Bray-Curtis:
-bray_distancia<- vegdist(datos_beta_1, method = "bray")
+bray_distancia<- vegdist(datos_beta_1[ ,-1], method = "bray")
 print(bray_distancia)
-#########
+V#########
