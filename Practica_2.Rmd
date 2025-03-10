@@ -24,13 +24,13 @@ output: html_document
 -   Construir una matriz de diferencias (distancias) para cada medida.
 
 ## **Resultados**
+
 ```{r}
 library(DescTools)
   #install.packages("DescTools")
 library(vegan)
 library(ggplot2)
 ```
-
 
 ### Bolsa estrella:
 
@@ -179,7 +179,6 @@ print(C_simpson)
 C_inverso <- inverso_simpson(abundancias_corazon)
 print(C_inverso)
 ```
-
 
 ### **Bolsa Luna.**
 
@@ -361,114 +360,6 @@ estimateR(naranaja_abundancias)->chao_naranja
 print(chao_naranja[[2]])
 ```
 
-### Ultima Bolsa:
-
-```{r}
-otro_abundancias <- c(14,10,3,3,2,2,1,1)
-otro_nombres <- c("azul cielo", "azul claro", "azul oscuro", "rosa mexicano", 
-                  "rosa","rosa claro", 
-                  "verde claro", "rojo")
-
-
-names(otro_abundancias)<- otro_nombres
-print(otro_abundancias)
-
-#hacer el data frame:
-otro_dataframe <- data.frame(
-  individuos = c(14,10,3,3,2,2,1,1),
-  especies = c("azul cielo", "azul claro", "azul oscuro", "rosa mexicano", 
-               "rosa","rosa claro", 
-               "verde claro", "rojo")
-)
-otro_dataframe
-
-fig3 <- ggplot (otro_dataframe, aes(x= reorder (especies, -individuos),
-                                    y= individuos, fill = especies))+  
-  geom_bar ( stat = "identity") +
-  labs(title = "Abundancia de especies de la ultima bolsa",
-       x = "Especies",
-       y = "Número de individuos") +
-  scale_fill_manual(values = c(
-    "azul cielo" =  "skyblue",
-    "azul claro" =  "lightblue",
-    "azul oscuro" =  "darkblue",
-    "rosa mexicano" =  "deeppink",
-    "rosa" =  "hotpink",
-    "rosa claro" =  "lightpink",
-    "verde claro" =  "lightgreen",
-    "rojo" =  "red"))+
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-fig3
-```
-
-### *Índices*
-
-**Shannon**
-
-```{r}
-source("FUNCIONES.R")
-shannon_mejor(otro_abundancias)-> shannon_otro
-print(shannon_otro)
-```
-
-**Pielou**
-
-```{r}
-pielou(otro_abundancias)->pielou_otro
-print(pielou_otro)
-```
-
-**Simpson**
-
-```{r}
-simpson_funcion(otro_abundancias)->simpson_otro
-print(simpson_otro)
-```
-
-**Simpson inverso**
-
-```{r}
-inverso_simpson(otro_abundancias)->inverso_otro
-print(inverso_otro)
-```
-
-***Gini***
-
-```{r}
-Gini(otro_abundancias)->gini_otro
-print(gini_otro)
-```
-
-**chao1**
-
-```{r}
-estimateR(otro_abundancias)->chao_otro
-print(chao_otro[[2]])
-```
-
-## **Curva de Rarefraccion todos los sitios**
-```{r}
-#1.- cargar la tabla al final.
-#rarecurve: tiene que ser una matriz de los datos.
-
-todos_datos <- read.csv("DATOS/datos_sitios - Hoja 1.csv", )
-
-View(todos_datos)
-attach(todos_datos)
-numeric_data <- todos_datos [,sapply(todos_datos, is.numeric)]
-str(numeric_data)
-numeric_matrix <- as.matrix(numeric_data)
-numeric_matrix_no_na <- na.omit(numeric_matrix)
-library(iNEXT)
-#install.packages("iNEXT")
-D_abund <- iNEXT(numeric_matrix_no_na, datatype = "abundance")
-plot(D_abund)
-
-detach(todos_datos)
-
-```
-
 
 #### **Bolsa sonrisa**
 
@@ -562,7 +453,6 @@ estimateR(sonrisa_abundancias)
 #12
 ```
 
-
 ### **Bolsa verde**
 
 ```{r}
@@ -647,6 +537,115 @@ estimateR(verde_abundancias)
 #1
 ```
 
+### Ultima Bolsa:
+
+```{r}
+otro_abundancias <- c(14,10,3,3,2,2,1,1)
+otro_nombres <- c("azul cielo", "azul claro", "azul oscuro", "rosa mexicano", 
+                  "rosa","rosa claro", 
+                  "verde claro", "rojo")
+
+
+names(otro_abundancias)<- otro_nombres
+print(otro_abundancias)
+
+#hacer el data frame:
+otro_dataframe <- data.frame(
+  individuos = c(14,10,3,3,2,2,1,1),
+  especies = c("azul cielo", "azul claro", "azul oscuro", "rosa mexicano", 
+               "rosa","rosa claro", 
+               "verde claro", "rojo")
+)
+otro_dataframe
+
+fig3 <- ggplot (otro_dataframe, aes(x= reorder (especies, -individuos),
+                                    y= individuos, fill = especies))+  
+  geom_bar ( stat = "identity") +
+  labs(title = "Abundancia de especies de la ultima bolsa",
+       x = "Especies",
+       y = "Número de individuos") +
+  scale_fill_manual(values = c(
+    "azul cielo" =  "skyblue",
+    "azul claro" =  "lightblue",
+    "azul oscuro" =  "darkblue",
+    "rosa mexicano" =  "deeppink",
+    "rosa" =  "hotpink",
+    "rosa claro" =  "lightpink",
+    "verde claro" =  "lightgreen",
+    "rojo" =  "red"))+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+fig3
+```
+
+### *Índices*
+
+**Shannon**
+
+```{r}
+source("FUNCIONES.R")
+shannon_mejor(otro_abundancias)-> shannon_otro
+print(shannon_otro)
+```
+
+**Pielou**
+
+```{r}
+pielou(otro_abundancias)->pielou_otro
+print(pielou_otro)
+```
+
+**Simpson**
+
+```{r}
+simpson_funcion(otro_abundancias)->simpson_otro
+print(simpson_otro)
+```
+
+**Simpson inverso**
+
+```{r}
+inverso_simpson(otro_abundancias)->inverso_otro
+print(inverso_otro)
+```
+
+***Gini***
+
+```{r}
+Gini(otro_abundancias)->gini_otro
+print(gini_otro)
+```
+
+**chao1**
+
+```{r}
+estimateR(otro_abundancias)->chao_otro
+print(chao_otro[[2]])
+```
+
+## **Curva de Rarefraccion todos los sitios**
+
+```{r}
+#1.- cargar la tabla al final.
+#rarecurve: tiene que ser una matriz de los datos.
+
+todos_datos <- read.csv("DATOS/datos_sitios - Hoja 1.csv", )
+
+View(todos_datos)
+attach(todos_datos)
+numeric_data <- todos_datos [,sapply(todos_datos, is.numeric)]
+str(numeric_data)
+numeric_matrix <- as.matrix(numeric_data)
+numeric_matrix_no_na <- na.omit(numeric_matrix)
+library(iNEXT)
+#install.packages("iNEXT")
+D_abund <- iNEXT(numeric_matrix_no_na, datatype = "abundance")
+plot(D_abund)
+
+detach(todos_datos)
+
+```
+
 ## **Discusión**
 
 ## **Cuestionario**
@@ -665,15 +664,11 @@ estimateR(verde_abundancias)
 
 **7. ¿Qué interpretación ecológica tienen las diferencias entre sitios?**
 
-**8. ¿Cómo interpretas la forma de las curvas de abundancia?**  
-Que en el caso de los sitios que tienen muchos individuos, pero solo una especie, como la bolsa naranja y verde, su curva es una línea recta, a diferencia de las bolsas con más especies como la bolsa luna, verde y sonrisa, que su curva alcanza la mayor altitud, que alcanzan el máximo de especies. Las otras curvas se asemejan a las curvas vistas en clase, donde falta un muestreo del sitio. En este caso sabemos que no falta mas muestreos, pero sirven como ejemplo para observar la diversidad de especies en sitios con el máximo conocido de especies, pocas especies y sitios con dominancia de especies.  
+**8. ¿Cómo interpretas la forma de las curvas de abundancia?**\
+Que en el caso de los sitios que tienen muchos individuos, pero solo una especie, como la bolsa naranja y verde, su curva es una línea recta, a diferencia de las bolsas con más especies como la bolsa luna, verde y sonrisa, que su curva alcanza la mayor altitud, que alcanzan el máximo de especies. Las otras curvas se asemejan a las curvas vistas en clase, donde falta un muestreo del sitio. En este caso sabemos que no falta mas muestreos, pero sirven como ejemplo para observar la diversidad de especies en sitios con el máximo conocido de especies, pocas especies y sitios con dominancia de especies.\
 **9. ¿Qué implicaciones tienen para la dominancia de especies?**
-
-
 
 **10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**
 
-
-**11. ¿Cuál índice te pareció más útil y por qué?**  
-De los índices alfa, el que más nos pareció útil fue el índice de Shannon, este índice nos permite saber cómo está distribuido nuestros sitios, además, al tomar en cuenta la abundancia de las especies permite una mejor estimación de la diversidad. Complementario a este índice, el índice de Pielou es otro índice que nos parece fácil de interpretar. 
-
+**11. ¿Cuál índice te pareció más útil y por qué?**\
+De los índices alfa, el que más nos pareció útil fue el índice de Shannon, este índice nos permite saber cómo está distribuido nuestros sitios, además, al tomar en cuenta la abundancia de las especies permite una mejor estimación de la diversidad. Complementario a este índice, el índice de Pielou es otro índice que nos parece fácil de interpretar.
