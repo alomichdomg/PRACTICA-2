@@ -695,8 +695,6 @@ datos_beta <- read.csv("DATOS/beta - Hoja 1.csv")
 # TIENE QUE SER UN DATA FRAME
 datos_beta_1 <- as.data.frame((datos_beta > 0) * 1)
 
-datos_beta_1[] <- lapply(datos_beta_1, as.numeric) #HACER LOS DATOS NUMERICOS, para que 
-#los detecte
 
 datos_beta_1[ ,-1] #ver datos 
 
@@ -713,8 +711,6 @@ datos_beta <- read.csv("DATOS/beta - Hoja 1.csv")
 # TIENE QUE SER UN DATA FRAME
 datos_beta_1 <- as.data.frame((datos_beta > 0) * 1)
 
-datos_beta_1[] <- lapply(datos_beta_1, as.numeric) #HACER LOS DATOS NUMERICOS, para que 
-#los detecte
 
 datos_beta_1[ ,-1] #ver datos 
 
@@ -813,7 +809,10 @@ En el sitio luna el resultado de los distintos índices nos indica que el sitio 
 
 En el sitio naranja se observa una dominancia de la especie naranja, esto se puede observar en los valores obtenidos en los índices, en el caso del índice de Shannon, Pielou y Gini sus valores o la falta nos indica una dominancia completa de la especie naranja, el índice de chao1 nos da el valor de la riqueza que en este caso es de 1.
 
-La bolsa ultima, a diferencia de la bolsa luna, no cuenta con todas las especies, los índices de Shannon indica que no hay dominancia de una especie y de Pielou indican que las especies están en abundancias y no hay una dominancia marcada. En el caso del índice de Gini, los valores obtenidos están en la mitad del rango, esto puede indicar que hay un balance entre dominancia y equidad de una especia, si vemos la grafica de abundancias observados que la especie azul tienen mayor numero de abundancia a comparación que otras especies, pero no representa una dominancia.
+La bolsa ultima, a diferencia de la bolsa luna, no cuenta con todas las especies, los índices de Shannon indica que no hay dominancia de una especie y de Pielou indican que las especies están en abundancias y no hay una dominancia marcada. En el caso del índice de Gini, los valores obtenidos están en la mitad del rango, esto puede indicar que hay un balance entre dominancia y equidad de una especia, si vemos la grafica de abundancias observados que la especie azul tienen mayor numero de abundancia a comparación que otras especies, pero no representa una dominancia.  
+
+En general, la mayoria de las comunidades presenta una similitud moderada, ya que los indices no superan valores de 0.5 en ambos indices (Jaccard y Bray-Curtis). Compartiendo un maximo del 50% de especies. Los indices son una manera util para comparar la diversidad entre cada sitio. Reflejando la heterogeneidad u homogeneidad entre los sitios y permitiendo la identificación de especies comunes entre ambos. Estos indices pueden ser una herramienta para observar cambios que ocurren dentro de una comunidad y la comparacion entre comunidades, estos cambios pueden ser la introduccion de nuevas especies y observar tasas de cambio a lo largo del tiempo (Molina, M. F., & Farinós, H. M. 2012).  
+
 
 ## **Cuestionario**
 
@@ -899,4 +898,6 @@ Schroeder, P. J., & Jenkins, D. G. (2018). *How robust are popular beta diversit
 
 Spellerberg, I. F. (2005). *Biological indicators and indices*. En **Cambridge University Press eBooks** (pp. 152-190). <https://doi.org/10.1017/cbo9780511614699.008>
 
-Spellerberg, I. F., & Fedor, P. J. (2003). *A tribute to Claude Shannon (1916–2001) and a plea for more rigorous use of species richness, species diversity and the ‘Shannon–Wiener’ Index*. **Global Ecology and Biogeography**, 12(3), 177–179. <https://doi.org/10.1046/j.1466-822x.2003.00015>
+Spellerberg, I. F., & Fedor, P. J. (2003). *A tribute to Claude Shannon (1916–2001) and a plea for more rigorous use of species richness, species diversity and the ‘Shannon–Wiener’ Index*. **Global Ecology and Biogeography**, 12(3), 177–179. <https://doi.org/10.1046/j.1466-822x.2003.00015>  
+
+Molina, M. F., & Farinós, H. M. (2012). *Los componentes alfa, beta y gamma de la biodiversidad. Aplicación al estudio de comunidades vegetales.* **https://riunet.upv.es/bitstream/handle/10251/16285/Microsoft%20Word%20-%20articulo%20docente%20def.pdf?sequence=1**
