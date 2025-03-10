@@ -74,3 +74,30 @@ fig1 <- ggplot (luna_dataframe, aes(x= especie_color, y= abundancia))+
 fig1
 
 ##################################################################
+
+#beta
+#• Calcula la diversidad beta de todos las parejas de sitios utilizando los índices de: 
+#Jaccard y Bray-Curtis.
+#Construye una matriz de diferencias (distancias) para cada medida.
+
+naranja_nombres <- c("naranja")
+naranaja_abundancias <- c(77)
+
+#JACCARD:
+#define Jaccard Similarity function
+jaccard <- function(a, b) {
+  intersection = length(intersect(a, b))
+  union = length(a) + length(b) - intersection
+  return (intersection/union)
+}
+
+#find Jaccard Similarity between the two sets 
+jaccard(luna_conjunto, naranja_nombres) #tiene que ser con los nombres de cada cosa.
+
+#METODO CON LA MATRIZ DE DISTANCIAS:
+df<-data.frame(luna_abundancias, naranaja_abundancias) #NO.
+vegdist(df, method = "jaccard")
+
+
+##################################################################
+#rank abundance:
