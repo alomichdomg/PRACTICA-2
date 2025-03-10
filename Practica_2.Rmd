@@ -473,29 +473,6 @@ estimateR(otro_abundancias)->chao_otro
 print(chao_otro[[2]])
 ```
 
-## **Curva de Rarefraccion todos los sitios**
-```{r}
-#1.- cargar la tabla al final.
-#rarecurve: tiene que ser una matriz de los datos.
-
-todos_datos <- read.csv("DATOS/datos_sitios - Hoja 1.csv", )
-
-View(todos_datos)
-attach(todos_datos)
-numeric_data <- todos_datos [,sapply(todos_datos, is.numeric)]
-str(numeric_data)
-numeric_matrix <- as.matrix(numeric_data)
-numeric_matrix_no_na <- na.omit(numeric_matrix)
-library(iNEXT)
-#install.packages("iNEXT")
-D_abund <- iNEXT(numeric_matrix_no_na, datatype = "abundance")
-plot(D_abund)
-
-detach(todos_datos)
-
-```
-
-
 #### **Bolsa sonrisa**
 
 ```{r}
@@ -672,6 +649,29 @@ print(gini_verde)
 estimateR(verde_abundancias)
 #1
 ```
+
+## **Curva de Rarefraccion todos los sitios**
+```{r}
+#1.- cargar la tabla al final.
+#rarecurve: tiene que ser una matriz de los datos.
+
+todos_datos <- read.csv("DATOS/datos_sitios - Hoja 1.csv", )
+
+View(todos_datos)
+attach(todos_datos)
+numeric_data <- todos_datos [,sapply(todos_datos, is.numeric)]
+str(numeric_data)
+numeric_matrix <- as.matrix(numeric_data)
+numeric_matrix_no_na <- na.omit(numeric_matrix)
+library(iNEXT)
+#install.packages("iNEXT")
+D_abund <- iNEXT(numeric_matrix_no_na, datatype = "abundance")
+plot(D_abund)
+
+detach(todos_datos)
+
+```
+
 
 ## **Discusión**
 
