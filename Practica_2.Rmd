@@ -126,6 +126,7 @@ print(E_gini)
 
 ```{r}
 E_chao <- estimateR(abundancias_estrella)
+print(E_chao [[2]])
 ```
 
 ### Bolsa corazón:
@@ -211,6 +212,7 @@ print(C_gini)
 
 ```{r}
 C_chao <- estimateR(abundancias_corazon)
+print(C_chao [[2]])
 
 ```
 
@@ -568,7 +570,8 @@ print(gini_sonrisa)
 **Chao**
 
 ```{r}
-estimateR(sonrisa_abundancias)
+estimateR(sonrisa_abundancias) -> chao_sonrisa
+print(chao_sonrisa[[2]])
 #12
 ```
 
@@ -652,7 +655,9 @@ print(gini_verde)
 **Chao**
 
 ```{r}
-estimateR(verde_abundancias)
+estimateR(verde_abundancias) -> chao_verde
+
+print(chao_verde[[2]])
 #1
 ```
 
