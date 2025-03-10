@@ -173,7 +173,7 @@ C_inverso <- inverso_simpson(abundancias_corazon)
 print(C_inverso)
 ```
 
-<<<<<<< HEAD
+
 ### **Bolsa Luna.**
 
 ### 
@@ -554,7 +554,7 @@ print(gini_sonrisa)
 estimateR(sonrisa_abundancias)
 #12
 ```
->>>>>>> c25b279ab33d2e3c3360860fd15313c11ec39704
+
 
 ### **Bolsa verde**
 
@@ -658,14 +658,13 @@ estimateR(verde_abundancias)
 
 **7. ¿Qué interpretación ecológica tienen las diferencias entre sitios?**
 
-**8. ¿Cómo interpretas la forma de las curvas de abundancia?**
-
+**8. ¿Cómo interpretas la forma de las curvas de abundancia?**  
+Que en el caso de los sitios que tienen muchos individuos, pero solo una especie, como la bolsa naranja y verde, su curva es una línea recta, a diferencia de las bolsas con más especies como la bolsa luna, verde y sonrisa, que su curva alcanza la mayor altitud, que alcanzan el máximo de especies. Las otras curvas se asemejan a las curvas vistas en clase, donde falta un muestreo del sitio. En este caso sabemos que no falta mas muestreos, pero sirven como ejemplo para observar la diversidad de especies en sitios con el máximo conocido de especies, pocas especies y sitios con dominancia de especies.  
 **9. ¿Qué implicaciones tienen para la dominancia de especies?**
 
 
 
 **10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**
-
 
 
 **11. ¿Cuál índice te pareció más útil y por qué?**  
