@@ -17,6 +17,7 @@ library(DescTools)
   #install.packages("DescTools")
 library(vegan)
 library(ggplot2)
+library(re)
 ####
 source("FUNCIONES.R") #para llamar las funciones
 
@@ -63,11 +64,13 @@ estimateR(luna_abundancias)
 plot(luna_abundancias)
 #hacer el data frame:
 luna_dataframe <- data.frame(
-  especie_color = luna_conjunto,
-  abundancia = luna_abundancias
+  abundancia = luna_abundancias,
+  especie_color = luna_conjunto
 )
 luna_dataframe
 
 fig1 <- ggplot (luna_dataframe, aes(x= especie_color, y= abundancia))+  
   geom_bar ( stat = "identity", fill = "#6666FF") 
 fig1
+
+##################################################################
