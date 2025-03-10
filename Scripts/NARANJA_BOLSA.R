@@ -41,7 +41,7 @@ print(gini_naranja)
 
 #Chao1
 estimateR(naranaja_abundancias)-> chao_naranja
-print(shannon_naranja[[2]])
+print(chao_naranja[[2]])
 
 #1
 

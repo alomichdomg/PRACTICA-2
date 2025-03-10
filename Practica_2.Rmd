@@ -6,14 +6,14 @@ output: html_document
 ---
 
 ## **Introducción**
-La biodiversidad se puede definir como la variedad de genes, especies y ecosistemas presentes en un sitio definido, dicha variabilidad es el resultado de diversos eventos evolutivos a lo largo del tiempo. En ecología, la biodiversidad es un concepto muy importante, ya que nos ayuda a comprender la composición y funcionamiento de diferentes comunidades o ecosistemas (Purvis & Hector, 2000).  
 
-La diversidad alfa es un concepto muy utilizado en ecología, el cual hace referencia al número de especies que hay en un área o ecosistema determinado, se obtiene tomando en cuenta la riqueza y la distribución de especies. Dentro de la diversidad alfa, encontramos al índice de Shannon el cual mide la incertidumbre de identificar una especie aleatoriamente (Spellerberg & Fedor, 2003). El índice de Simpson en su versión normal e inversa, los cuales nos dan información sobre la probabilidad de que dos individuos seleccionados aleatoriamente pertenezcan a la misma especie (Lande, 1996). El índice de Pielou, el cual evalúa la equitatividad y finalmente, el índice de Chao1, que nos da un acercamiento real a la riqueza de especies, eliminando el sesgo probable al momento de realizar un muestreo (Chao & Chiu, 2016).  
+La biodiversidad se puede definir como la variedad de genes, especies y ecosistemas presentes en un sitio definido, dicha variabilidad es el resultado de diversos eventos evolutivos a lo largo del tiempo. En ecología, la biodiversidad es un concepto muy importante, ya que nos ayuda a comprender la composición y funcionamiento de diferentes comunidades o ecosistemas (Purvis & Hector, 2000).
 
-Por otro lado, la diversidad beta nos ayuda a identificar las diferencias en la composición entre dos sitios o comunidades, para definir similitud o disimilitud entre las mismas, esto es posible con los índices de Jaccard y Bray-Curtis (Schroeder & Jenkins, 2018).  
+La diversidad alfa es un concepto muy utilizado en ecología, el cual hace referencia al número de especies que hay en un área o ecosistema determinado, se obtiene tomando en cuenta la riqueza y la distribución de especies. Dentro de la diversidad alfa, encontramos al índice de Shannon el cual mide la incertidumbre de identificar una especie aleatoriamente (Spellerberg & Fedor, 2003). El índice de Simpson en su versión normal e inversa, los cuales nos dan información sobre la probabilidad de que dos individuos seleccionados aleatoriamente pertenezcan a la misma especie (Lande, 1996). El índice de Pielou, el cual evalúa la equitatividad y finalmente, el índice de Chao1, que nos da un acercamiento real a la riqueza de especies, eliminando el sesgo probable al momento de realizar un muestreo (Chao & Chiu, 2016).
 
-Esta práctica consistió en una simulación de diferentes sitios, los cuales fueron representados con bolsas de papel diferenciadas por dibujos, estas bolsas contenían fichas de diferentes colores simulando a las diferentes especies, es decir, cada color representa una especie diferente y la cantidad de fichas indicaba la abundancia. 
+Por otro lado, la diversidad beta nos ayuda a identificar las diferencias en la composición entre dos sitios o comunidades, para definir similitud o disimilitud entre las mismas, esto es posible con los índices de Jaccard y Bray-Curtis (Schroeder & Jenkins, 2018).
 
+Esta práctica consistió en una simulación de diferentes sitios, los cuales fueron representados con bolsas de papel diferenciadas por dibujos, estas bolsas contenían fichas de diferentes colores simulando a las diferentes especies, es decir, cada color representa una especie diferente y la cantidad de fichas indicaba la abundancia.
 
 ## **Objetivos**
 
@@ -32,13 +32,13 @@ Esta práctica consistió en una simulación de diferentes sitios, los cuales fu
 -   Construir una matriz de diferencias (distancias) para cada medida.
 
 ## **Resultados**
+
 ```{r}
 library(DescTools)
   #install.packages("DescTools")
 library(vegan)
 library(ggplot2)
 ```
-
 
 ### Bolsa estrella:
 
@@ -213,7 +213,6 @@ print(C_gini)
 C_chao <- estimateR(abundancias_corazon)
 
 ```
-
 
 ### **Bolsa Luna.**
 
@@ -573,7 +572,6 @@ estimateR(sonrisa_abundancias)
 #12
 ```
 
-
 ### **Bolsa verde**
 
 ```{r}
@@ -659,6 +657,7 @@ estimateR(verde_abundancias)
 ```
 
 ## **Curva de Rarefraccion todos los sitios**
+
 ```{r}
 #1.- cargar la tabla al final.
 #rarecurve: tiene que ser una matriz de los datos.
@@ -680,7 +679,6 @@ detach(todos_datos)
 
 ```
 
-
 ## **Discusión**
 
 ## **Cuestionario**
@@ -699,15 +697,17 @@ detach(todos_datos)
 
 **7. ¿Qué interpretación ecológica tienen las diferencias entre sitios?**
 
-**8. ¿Cómo interpretas la forma de las curvas de abundancia?**  
-Que en el caso de los sitios que tienen muchos individuos, pero solo una especie, como la bolsa naranja y verde, su curva es una línea recta, a diferencia de las bolsas con más especies como la bolsa luna, verde y sonrisa, que su curva alcanza la mayor altitud, que alcanzan el máximo de especies. Las otras curvas se asemejan a las curvas vistas en clase, donde falta un muestreo del sitio. En este caso sabemos que no falta mas muestreos, pero sirven como ejemplo para observar la diversidad de especies en sitios con el máximo conocido de especies, pocas especies y sitios con dominancia de especies.  
+**8. ¿Cómo interpretas la forma de las curvas de abundancia?**\
+Que en el caso de los sitios que tienen muchos individuos, pero solo una especie, como la bolsa naranja y verde, su curva es una línea recta, a diferencia de las bolsas con más especies como la bolsa luna, verde y sonrisa, que su curva alcanza la mayor altitud, que alcanzan el máximo de especies.
+
+Las otras curvas se asemejan a las curvas vistas en clase, donde falta un muestreo del sitio. En este caso sabemos que no falta mas muestreos, pero sirven como ejemplo para observar la diversidad de especies en sitios con el máximo conocido de especies, pocas especies y sitios con dominancia de especies.\
+
 **9. ¿Qué implicaciones tienen para la dominancia de especies?**
 
-
+En las bolsas con dominancia de especies, los índices de Shannon, Pielou y Ginni se mantienen en 0, lo que indica una alta dominancia de una sola especie en este caso y una riqueza igual a 1 si observamos el índice de Chao1. El índice de Simspon da un valor de 1 ya que es un índice que dice que la probabilidad de obtener dos individuos de la misma propalación, en este caso es el valor máximo ya que solo hay una especie.\
+La dominancia de especies, indica que estos individuos obtienen una mayor ventaja a comparación de otras especies, obtienen un mayor numero de recursos, que en ciertos casos desestabiliza a las comunidades.
 
 **10. ¿Qué patrones generales observaste en la diversidad entre los sitios?**
 
-
-**11. ¿Cuál índice te pareció más útil y por qué?**  
-De los índices alfa, el que más nos pareció útil fue el índice de Shannon, este índice nos permite saber cómo está distribuido nuestros sitios, además, al tomar en cuenta la abundancia de las especies permite una mejor estimación de la diversidad. Complementario a este índice, el índice de Pielou es otro índice que nos parece fácil de interpretar. 
-
+**11. ¿Cuál índice te pareció más útil y por qué?**\
+De los índices alfa, el que más nos pareció útil fue el índice de Shannon, este índice nos permite saber cómo está distribuido nuestros sitios, además, al tomar en cuenta la abundancia de las especies permite una mejor estimación de la diversidad. Complementario a este índice, el índice de Pielou es otro índice que nos parece fácil de interpretar.
