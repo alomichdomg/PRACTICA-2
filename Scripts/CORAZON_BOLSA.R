@@ -52,5 +52,10 @@ print(C_simpson)
 C_inverso <- inverso_simpson(abundancias_corazon)
 print(C_inverso)
 
+# Gini
+C_gini <- Gini(abundancias_corazon)
+print(C_gini)
 
+## Chao
+C_chao <- estimateR(abundancias_corazon)
 

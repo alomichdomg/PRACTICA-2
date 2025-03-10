@@ -57,7 +57,11 @@ print(E_simpson)
 E_inverso <- inverso_simpson(abundancias_estrella)
 print(E_inverso)
 
+## Gini
+E_gini <- Gini(abundancias_estrella)
+print(E_gini)
 
-
+# Chao
+E_chao <- estimateR(abundancias_estrella)
 
 
